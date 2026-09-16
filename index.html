@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bangkok &amp; Hua Hin, With Toddler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --ink:#16302c; --ink-soft:#54655f; --paper:#ffffff; --paper-raise:#ffffff;
+    --line:#e4e4e0; --teal:#1f6f65; --teal-deep:#134a44; --coral:#d96a4a; --gold:#b8862f;
+    --good:#3d7a4d; --tag-bg:#f0f1ec;
+    --shadow: 0 1px 2px rgba(22,48,44,.05), 0 8px 20px -14px rgba(22,48,44,.15);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#eef2ef; --ink-soft:#aebdb7; --paper:#12201d; --paper-raise:#182b27;
+      --line:#2b423c; --teal:#5fb3a4; --teal-deep:#8fd1c2; --coral:#e88a6c; --gold:#d9ac57;
+      --good:#6fbf7f; --tag-bg:#213531;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 28px -14px rgba(0,0,0,.55);
+    }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Work Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.55;
+    padding-inline:20px; padding-block:28px 64px;
+  }
+  .wrap{max-width:920px; margin:0 auto;}
+  img{max-width:100%;}
+  h1,h2,h3{font-family:"Fraunces", Georgia, serif; text-wrap:balance; color:var(--ink); margin:0;}
+  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-deep); font-weight:600;}
+  a{color:var(--teal-deep);}
+  .num{font-variant-numeric:tabular-nums;}
+
+  header.hero{padding-block:8px 32px; border-bottom:1px solid var(--line); margin-bottom:36px;}
+  header.hero h1{font-size:clamp(2rem, 5vw, 2.9rem); font-weight:600; margin-top:8px;}
+  header.hero p.sub{color:var(--ink-soft); font-size:1.05rem; max-width:60ch; margin-top:12px;}
+  .route-strip{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .route-chip{background:var(--paper-raise); border:1px solid var(--line); border-radius:999px; padding:6px 14px; font-size:.85rem; color:var(--ink-soft); box-shadow:var(--shadow); font-family:"IBM Plex Mono", monospace;}
+  .route-chip b{color:var(--ink); font-family:"Work Sans", sans-serif; font-weight:600;}
+
+  .hero-photos{display:grid; grid-template-columns:1.3fr 1fr; gap:10px; margin-top:22px;}
+  .hero-photos figure{margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); position:relative;}
+  .hero-photos img{width:100%; height:230px; object-fit:cover; display:block;}
+  figcaption{position:absolute; left:0; right:0; bottom:0; padding:6px 10px; font-size:.68rem; font-family:"IBM Plex Mono",monospace; color:#fff; background:linear-gradient(to top, rgba(10,20,18,.75), transparent);}
+  figcaption a{color:#fff; text-decoration:underline;}
+  @media (max-width:620px){.hero-photos{grid-template-columns:1fr;} .hero-photos img{height:190px;}}
+
+  section{margin-block:44px;}
+  section > .sec-head{margin-bottom:18px;}
+  section > .sec-head h2{font-size:1.5rem; font-weight:600;}
+  section > .sec-head p{color:var(--ink-soft); margin-top:6px; max-width:64ch;}
+
+  .recommend{background:linear-gradient(155deg, var(--tag-bg), transparent 65%), var(--paper-raise); border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:var(--radius); padding:20px 22px; box-shadow:var(--shadow); display:flex; gap:16px; align-items:flex-start;}
+  .recommend .eyebrow{color:var(--teal);}
+  .recommend h3{font-size:1.2rem; margin:4px 0 6px; font-weight:600;}
+  .recommend p{margin:0; color:var(--ink-soft);}
+  .recommend .why{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+  .recommend .why span{font-family:"IBM Plex Mono", monospace; font-size:.72rem; background:var(--tag-bg); color:var(--ink-soft); padding:4px 10px; border-radius:999px;}
+  .rec-icon{width:34px; height:34px; flex:0 0 auto;}
+
+  .opt-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px;}
+  .opt-card{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:12px;}
+  .opt-card.picked{border-color:var(--teal); box-shadow:0 0 0 2px var(--teal), var(--shadow);}
+  .opt-card.picked .airline b::after{content:"Recommended"; margin-left:8px; font-family:"IBM Plex Mono",monospace; font-size:.62rem; background:var(--teal); color:#fff; padding:2px 8px; border-radius:999px; vertical-align:middle; letter-spacing:.04em;}
+  .opt-card .airline{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+  .opt-card .airline b{font-size:1.02rem;}
+  .badge{font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:999px; font-weight:600;}
+  .badge.mon{background:#e4eee3; color:var(--good);}
+  .badge.flex{background:var(--tag-bg); color:var(--ink-soft);}
+  .leg{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; font-family:"IBM Plex Mono", monospace; font-size:.85rem;}
+  .leg .place{display:flex; flex-direction:column;}
+  .leg .place .time{font-size:1.15rem; font-weight:600; color:var(--ink);}
+  .leg .place .code{color:var(--ink-soft); font-size:.72rem; letter-spacing:.04em;}
+  .leg .mid{display:flex; flex-direction:column; align-items:center; color:var(--ink-soft); font-size:.7rem; gap:2px;}
+  .leg .mid .line{width:100%; height:1px; background:var(--line); position:relative; min-width:40px;}
+  .leg .mid .line::after{content:"→"; position:absolute; right:-2px; top:-9px; color:var(--ink-soft); font-size:.75rem;}
+  .leg.rtl .place:last-child{align-items:flex-end; text-align:right;}
+  .opt-foot{display:flex; justify-content:space-between; align-items:baseline; border-top:1px dashed var(--line); padding-top:10px; font-size:.85rem; color:var(--ink-soft); flex-wrap:wrap; gap:6px;}
+  .price{font-family:"IBM Plex Mono", monospace; font-weight:600; color:var(--ink); font-size:.95rem;}
+  .meta-line{font-size:.78rem;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;}
+
+  .split-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;}
+  .split-tabs button{font-family:"Work Sans", sans-serif; font-size:.85rem; font-weight:600; background:var(--paper-raise); border:1px solid var(--line); color:var(--ink-soft); padding:8px 14px; border-radius:999px; cursor:pointer;}
+  .split-tabs button:hover{border-color:var(--teal);}
+  .split-tabs button.active{background:var(--teal-deep); color:#f4f2ec; border-color:var(--teal-deep);}
+  .split-panel{display:none;}
+  .split-panel.active{display:block;}
+  .bar{display:flex; height:34px; border-radius:8px; overflow:hidden; border:1px solid var(--line); margin-bottom:14px;}
+  .bar span{display:flex; align-items:center; justify-content:center; font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:600; color:#f4f2ec;}
+  .bar .bkk{background:var(--teal);}
+  .bar .hh{background:var(--coral);}
+  .daylist{display:grid; gap:10px;}
+  .day-row{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:12px 14px; background:var(--paper-raise); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow);}
+  .day-row .d{font-family:"IBM Plex Mono",monospace; color:var(--ink-soft); font-size:.78rem; padding-top:2px;}
+  .day-row .d b{display:block; color:var(--ink); font-size:.95rem; font-family:"Work Sans",sans-serif; font-weight:700;}
+  .day-row .loc{font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:3px;}
+  .day-row.bkk .loc{color:var(--teal);}
+  .day-row.hh .loc{color:var(--coral);}
+  .day-row p{margin:0; color:var(--ink-soft); font-size:.92rem;}
+
+  .city-block{margin-bottom:28px;}
+  .city-block h3{font-size:1.15rem; margin-bottom:4px;}
+  .city-block .city-note{color:var(--ink-soft); font-size:.88rem; margin-bottom:14px; max-width:62ch;}
+  .city-photo{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); position:relative; margin-bottom:16px;}
+  .city-photo img{width:100%; height:220px; object-fit:cover; display:block;}
+  .hotel-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:14px;}
+  .hotel-card{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px;}
+  .hotel-card.picked{border-color:var(--teal); box-shadow:0 0 0 2px var(--teal), var(--shadow);}
+  .hotel-card.picked h4::after{content:"Pick"; margin-left:8px; font-family:"IBM Plex Mono",monospace; font-size:.6rem; font-weight:600; background:var(--teal); color:#fff; padding:2px 7px; border-radius:999px; letter-spacing:.04em; vertical-align:middle;}
+  .hotel-card h4{margin:0; font-family:"Work Sans",sans-serif; font-size:1rem; font-weight:700;}
+  .hotel-card .tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .tag{font-size:.68rem; font-family:"IBM Plex Mono",monospace; letter-spacing:.03em; padding:2px 8px; border-radius:6px; background:var(--tag-bg); color:var(--ink-soft);}
+  .tag.price{background:var(--teal-deep); color:#fff; font-weight:600;}
+
+  .info-block{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); margin-bottom:14px;}
+  .info-block h4{margin:0 0 6px; font-family:"Work Sans",sans-serif; font-size:1rem; font-weight:700;}
+  .info-block p{margin:0; color:var(--ink-soft); font-size:.9rem;}
+  .info-block .facts{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+  .info-block .facts span{font-family:"IBM Plex Mono",monospace; font-size:.72rem; background:var(--tag-bg); color:var(--ink-soft); padding:4px 10px; border-radius:999px;}
+  .info-block.note{border-left:4px solid var(--gold);}
+
+  .app-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px;}
+  .app-card{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow); display:flex; gap:12px; align-items:flex-start;}
+  .app-card .app-icon{width:36px; height:36px; border-radius:9px; flex:0 0 auto; display:flex; align-items:center; justify-content:center; font-size:1.1rem; background:var(--tag-bg);}
+  .app-card h4{margin:0 0 3px; font-size:.92rem; font-family:"Work Sans",sans-serif; font-weight:700;}
+  .app-card p{margin:0; font-size:.82rem; color:var(--ink-soft);}
+
+  .timeline{display:flex; flex-direction:column; gap:0;}
+  .tl-item{display:grid; grid-template-columns:120px 1fr; gap:16px; padding-block:14px; border-top:1px solid var(--line);}
+  .tl-item:first-child{border-top:none;}
+  .tl-item .tl-when{font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--teal-deep); font-weight:600; padding-top:2px;}
+  .tl-item h4{margin:0 0 6px; font-size:.95rem; font-family:"Work Sans",sans-serif; font-weight:700;}
+  .tl-item ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+  .tl-item li{font-size:.88rem; color:var(--ink-soft); display:flex; gap:8px; align-items:flex-start;}
+  .tl-item li::before{content:""; flex:0 0 auto; width:14px; height:14px; margin-top:3px; border-radius:4px; border:1.5px solid var(--line); background:var(--paper-raise);}
+  @media (max-width:520px){.tl-item{grid-template-columns:1fr;} .tl-item .tl-when{padding-top:0;}}
+  .hotel-card p{margin:0; font-size:.87rem; color:var(--ink-soft);}
+
+  .gallery{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px;}
+  .gallery figure{margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); background:var(--paper-raise);}
+  .gallery img{width:100%; height:160px; object-fit:cover; display:block;}
+  .gallery figcaption{position:static; background:none; color:var(--ink-soft); padding:10px 12px; font-family:"Work Sans",sans-serif; font-size:.85rem;}
+  .gallery figcaption a{color:var(--teal-deep); font-family:"IBM Plex Mono",monospace; font-size:.68rem; display:block; margin-top:4px;}
+
+  .check-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px;}
+  .check-col h4{font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-deep); margin-bottom:10px; font-weight:600;}
+  .check-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .check-col li{display:flex; align-items:flex-start; gap:9px; font-size:.92rem; color:var(--ink-soft);}
+  .check-col li::before{content:""; flex:0 0 auto; width:16px; height:16px; margin-top:2px; border-radius:5px; border:1.5px solid var(--line); background:var(--paper-raise);}
+
+  footer{margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-soft); font-size:.85rem;}
+  footer .credits{margin-top:10px; font-size:.78rem;}
+  footer .credits a{color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Bangkok &amp; Hua Hin, with a two-year-old</h1>
+    <p class="sub">Nothing here is booked yet — this page lays out every flight, night-split, and hotel option side by side so you and Salina can pick before we lock a single day-by-day plan. Current thinking: 6 nights, Nepal Airlines out and Thai Airways back, straight to Hua Hin from the airport, Bangkok last.</p>
+    <div class="route-strip">
+      <span class="route-chip">From <b>Kathmandu (KTM)</b></span>
+      <span class="route-chip">To <b>Bangkok (BKK)</b> + <b>Hua Hin / Cha-Am</b></span>
+      <span class="route-chip">Late Nov 2026</span>
+      <span class="route-chip">Party: <b>2 adults + 1 toddler</b> (turns 2 on Dec 1)</span>
+    </div>
+
+    <div class="hero-photos">
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bangkok_skyline_September_2022.jpg?width=1000" alt="Bangkok skyline at dusk" loading="lazy">
+        <figcaption>Bangkok · <a href="https://commons.wikimedia.org/wiki/File:Bangkok_skyline_September_2022.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+      </figure>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hua_Hin_Beach_evening.jpg?width=700" alt="Hua Hin beach in the evening" loading="lazy">
+        <figcaption>Hua Hin · <a href="https://commons.wikimedia.org/wiki/File:Hua_Hin_Beach_evening.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <section id="decision">
+    <div class="recommend">
+      <svg class="rec-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" fill="var(--teal)"/></svg>
+      <div>
+        <div class="eyebrow">Best case, all things considered</div>
+        <h3>Nepal Airlines out, Thai Airways back · Mon 23 → Sun 29 Nov · 6 nights</h3>
+        <p>Fly Nepal Airlines to Bangkok (lands 15:45, afternoon light) so the Hua Hin transfer arrives around 19:00 instead of 21:30 — a real bedtime, not a toddler-meltdown one. Fly Thai Airways back on whichever day suits, since it's daily. Mixing carriers gets you the cheaper, better-timed outbound leg and full return-date flexibility in one booking.</p>
+        <div class="why">
+          <span>Arrives Hua Hin ~19:00, not ~21:30</span>
+          <span>6 full nights</span>
+          <span>Return date fully flexible</span>
+          <span>Cheaper outbound leg</span>
+        </div>
+      </div>
+    </div>
+    <p style="color:var(--ink-soft); font-size:.87rem; margin-top:12px;">Two one-way tickets instead of a round-trip fare — usually a bit more than a single round-trip ticket, but the earlier arrival is worth it with a toddler. If you'd rather keep one airline for the whole trip, the all–Thai Airways 6-night version is right below.</p>
+  </section>
+
+  <section id="flights">
+    <div class="sec-head">
+      <h2>Flight options</h2>
+      <p>All fares shown are economy per adult, as quoted — check current price and seat count before booking. The mixed-carrier pairing above is recommended; here's how the individual legs and full-airline alternatives compare.</p>
+    </div>
+    <div class="opt-grid">
+
+      <div class="opt-card picked">
+        <div class="airline"><b>Nepal Airlines · RA 401</b><span class="badge mon">Outbound</span></div>
+        <div class="leg">
+          <div class="place"><span class="time">11:10</span><span class="code">KTM</span></div>
+          <div class="mid"><span>3h20m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">15:45</span><span class="code">BKK</span></div>
+        </div>
+        <div class="meta-line">Mon 23 Nov 2026 · one-way</div>
+        <div class="opt-foot"><span>Daytime arrival — transfer lands in Hua Hin before dinner, not after</span><span class="price num">≈ NPR 35,000</span></div>
+      </div>
+
+      <div class="opt-card picked">
+        <div class="airline"><b>Thai Airways · TG 321</b><span class="badge flex">Return</span></div>
+        <div class="leg">
+          <div class="place"><span class="time">TBD</span><span class="code">BKK</span></div>
+          <div class="mid"><span>~3h30m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">TBD</span><span class="code">KTM</span></div>
+        </div>
+        <div class="meta-line">Sun 29 Nov 2026 · one-way, flies daily</div>
+        <div class="opt-foot"><span>Any return date works — daily service, no Mon/Fri constraint</span><span class="price num">≈ NPR 48,000</span></div>
+      </div>
+
+      <div class="opt-card">
+        <div class="airline"><b>Thai Airways · TG 320</b><span class="badge flex">Daily</span></div>
+        <div class="leg">
+          <div class="place"><span class="time">13:30</span><span class="code">KTM</span></div>
+          <div class="mid"><span>3h30m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">18:15</span><span class="code">BKK</span></div>
+        </div>
+        <div class="meta-line">Mon 23 Nov 2026</div>
+        <div class="leg rtl">
+          <div class="place"><span class="time">TBD</span><span class="code">BKK</span></div>
+          <div class="mid"><span>~3h30m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">TBD</span><span class="code">KTM</span></div>
+        </div>
+        <div class="meta-line">Sun 29 Nov 2026</div>
+        <div class="opt-foot"><span>6 nights, single airline — but lands 18:15, transfer arrives ~21:30</span><span class="price num">≈ NPR 87,462</span></div>
+      </div>
+
+      <div class="opt-card">
+        <div class="airline"><b>Nepal Airlines · RA 401/402</b><span class="badge mon">Fri → Fri</span></div>
+        <div class="leg">
+          <div class="place"><span class="time">11:10</span><span class="code">KTM</span></div>
+          <div class="mid"><span>3h20m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">15:45</span><span class="code">BKK</span></div>
+        </div>
+        <div class="meta-line">Fri 20 Nov 2026</div>
+        <div class="leg rtl">
+          <div class="place"><span class="time">16:45</span><span class="code">BKK</span></div>
+          <div class="mid"><span>3h30m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">19:00</span><span class="code">KTM</span></div>
+        </div>
+        <div class="meta-line">Fri 27 Nov 2026</div>
+        <div class="opt-foot"><span>7 nights · same good hours, longest trip</span><span class="price num">≈ NPR 71,481</span></div>
+      </div>
+
+      <div class="opt-card">
+        <div class="airline"><b>Thai Airways · TG 310</b><span class="badge flex">Daily</span></div>
+        <div class="leg">
+          <div class="place"><span class="time">00:25</span><span class="code">KTM</span></div>
+          <div class="mid"><span>3h30m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">05:10</span><span class="code">BKK</span></div>
+        </div>
+        <div class="meta-line">Overnight departure</div>
+        <div class="leg rtl">
+          <div class="place"><span class="time">TBD</span><span class="code">BKK</span></div>
+          <div class="mid"><span>~3h30m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">TBD</span><span class="code">KTM</span></div>
+        </div>
+        <div class="meta-line">Flexible return</div>
+        <div class="opt-foot"><span>Red-eye — arrive exhausted with a toddler; not recommended</span><span class="price num">≈ NPR 87,462</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="split">
+    <div class="sec-head">
+      <h2>How to split the nights</h2>
+      <p>Three ways to divide the trip between the city and the coast, all 5 nights or longer. Tap a scenario to see the shape of the days.</p>
+    </div>
+
+    <div class="split-tabs" role="tablist">
+      <button class="active" data-target="s0">6 nights · straight to Hua Hin · Recommended</button>
+      <button data-target="s5">5 nights · straight to Hua Hin</button>
+      <button data-target="s3">5 nights · 2 BKK / 3 HH</button>
+    </div>
+
+    <div class="split-panel active" id="s0">
+      <div class="bar"><span class="hh" style="flex:4">Hua Hin</span><span class="bkk" style="flex:2">BKK</span></div>
+      <div class="daylist">
+        <div class="day-row hh"><div class="d">Mon<b>23</b></div><div><div class="loc">Hua Hin</div><p>Land BKK 15:45 (Nepal Airlines), Grab/private transfer direct to Hua Hin (~3h), arrive ~19:00, dinner and normal bedtime.</p></div></div>
+        <div class="day-row hh"><div class="d">Tue<b>24</b></div><div><div class="loc">Hua Hin</div><p>Full beach + pool day, recover from the travel day.</p></div></div>
+        <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary.</p></div></div>
+        <div class="day-row hh"><div class="d">Thu<b>26</b></div><div><div class="loc">Hua Hin</div><p>Unhurried extra coast day — the one this split buys you back. Beach, pool, Cicada Market if it's a weekend.</p></div></div>
+        <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Bangkok</div><p>Late-morning swim, transfer back to Bangkok in the afternoon, check in, easy dinner.</p></div></div>
+        <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day — Safari World is open Sat with the best hours (9–5:30) and both animal shows.</p></div></div>
+        <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Bangkok</div><p>Transfer to BKK, fly home.</p></div></div>
+      </div>
+    </div>
+
+    <div class="split-panel" id="s5">
+      <div class="bar"><span class="hh" style="flex:3">Hua Hin</span><span class="bkk" style="flex:2">BKK</span></div>
+      <div class="daylist">
+        <div class="day-row hh"><div class="d">Tue<b>24</b></div><div><div class="loc">Hua Hin</div><p>Land BKK 18:15, transfer direct to Hua Hin (~3h), arrive ~21:00–21:30.</p></div></div>
+        <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Full beach + pool day.</p></div></div>
+        <div class="day-row hh"><div class="d">Thu<b>26</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary.</p></div></div>
+        <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Bangkok</div><p>Transfer back to Bangkok, check in, easy dinner.</p></div></div>
+        <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day.</p></div></div>
+        <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Bangkok</div><p>Transfer to BKK, fly home.</p></div></div>
+      </div>
+    </div>
+
+    <div class="split-panel" id="s3">
+      <div class="bar"><span class="bkk" style="flex:2">BKK</span><span class="hh" style="flex:3">Hua Hin</span></div>
+      <div class="daylist">
+        <div class="day-row bkk"><div class="d">Tue<b>24</b></div><div><div class="loc">Bangkok</div><p>Evening arrival, easy dinner, early night.</p></div></div>
+        <div class="day-row bkk"><div class="d">Wed<b>25</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day, park stroll or pool time in the late afternoon.</p></div></div>
+        <div class="day-row hh"><div class="d">Thu<b>26</b></div><div><div class="loc">Hua Hin</div><p>Morning transfer, first afternoon on the beach.</p></div></div>
+        <div class="day-row hh"><div class="d">Fri<b>27</b></div><div><div class="loc">Hua Hin</div><p>Beach + pool, Cicada Market in the evening if it's a weekend.</p></div></div>
+        <div class="day-row hh"><div class="d">Sat<b>28</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary, unhurried last full day.</p></div></div>
+        <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Bangkok</div><p>Transfer to BKK, fly home.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hotels">
+    <div class="sec-head">
+      <h2>Hotel options</h2>
+      <p>Shortlisted for pools, connecting/family rooms, and a fit with a toddler's schedule.</p>
+    </div>
+
+    <div class="city-block">
+      <h3>Bangkok — Sukhumvit</h3>
+      <p class="city-note">Central, BTS-connected, easiest for a short zoo/aquarium stopover.</p>
+      <div class="city-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sukhumvit_Road_-01.jpg?width=1000" alt="Sukhumvit Road in Bangkok" loading="lazy">
+      </div>
+      <div class="hotel-grid">
+        <div class="hotel-card picked">
+          <h4>Grande Centre Point Terminal 21</h4>
+          <div class="tags"><span class="tag price">~THB 4,500/night</span><span class="tag">Family suites</span><span class="tag">Big pool</span><span class="tag">Connecting rooms</span></div>
+          <p>Right by the BTS and a mall for emergencies — easiest logistics for one city night either side of the transfer.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Bandara Suites Sukhumvit 39</h4>
+          <div class="tags"><span class="tag price">~THB 3,800/night</span><span class="tag">Suites + kitchenette</span><span class="tag">Pool</span></div>
+          <p>Thai-owned, roomy suites good for toddler food/formula prep.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Ariyasom Villa</h4>
+          <div class="tags"><span class="tag price">~THB 5,500/night</span><span class="tag">Boutique</span><span class="tag">Garden pool</span><span class="tag">Quiet</span></div>
+          <p>Leafy, low-key alternative if you'd rather skip tower-hotel energy.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>JW Marriott Hotel Bangkok</h4>
+          <div class="tags"><span class="tag price">~THB 7,000/night</span><span class="tag">Chain reliability</span><span class="tag">Pool</span><span class="tag">Sukhumvit Soi 2</span></div>
+          <p>Familiar Marriott standard, central Sukhumvit, dependable for a short stopover night.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Hyatt Regency Bangkok Sukhumvit</h4>
+          <div class="tags"><span class="tag price">~THB 6,500/night</span><span class="tag">Chain reliability</span><span class="tag">Family rooms</span><span class="tag">BTS-adjacent</span></div>
+          <p>Newer Hyatt property, spacious rooms, good if loyalty points matter to you.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="city-block">
+      <h3>Hua Hin / Cha-Am</h3>
+      <p class="city-note">Cha-Am's beach is calmer than central Hua Hin — worth weighing if the toddler is wary of waves or crowds.</p>
+      <div class="city-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cha_Am_Beach.jpg?width=1000" alt="Cha-Am beach" loading="lazy">
+      </div>
+      <div class="hotel-grid">
+        <div class="hotel-card picked">
+          <h4>Let's Sea Hua Hin Al Fresco</h4>
+          <div class="tags"><span class="tag price">~THB 4,200/night</span><span class="tag">Shallow split pool</span><span class="tag">Family favorite</span></div>
+          <p>Pool is famously calm and shallow — built with young kids in mind.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Veranda Resort &amp; Villas (Cha-Am)</h4>
+          <div class="tags"><span class="tag price">~THB 4,800/night</span><span class="tag">Lagoon pool</span><span class="tag">Spacious grounds</span></div>
+          <p>Quiet Cha-Am beachfront, room to roam without much traffic nearby.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Springfield@Sea Resort</h4>
+          <div class="tags"><span class="tag price">~THB 3,200/night</span><span class="tag">Beachfront</span><span class="tag">Family-run</span></div>
+          <p>Unfussy, direct beach access, good if you want low-key over polished.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Away Hua Hin</h4>
+          <div class="tags"><span class="tag price">~THB 3,600/night</span><span class="tag">Boutique</span><span class="tag">Garden pool</span></div>
+          <p>Smaller and calmer than the big resorts, still has a solid pool.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Hyatt Regency Hua Hin</h4>
+          <div class="tags"><span class="tag price">~THB 8,000/night</span><span class="tag">Chain reliability</span><span class="tag">Huge grounds</span><span class="tag">Lagoon pool</span></div>
+          <p>Large beachfront property with a proper kids' pool area and consistent Hyatt service.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Renaissance Hua Hin Resort &amp; Spa</h4>
+          <div class="tags"><span class="tag price">~THB 7,200/night</span><span class="tag">Chain reliability</span><span class="tag">Beachfront</span></div>
+          <p>Marriott-family resort, quieter stretch of beach, solid pool and family rooms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zoo">
+    <div class="sec-head">
+      <h2>The Bangkok animal day, in detail</h2>
+      <p>One flag first: Dusit Zoo (Khao Din) — the old central Bangkok zoo — closed permanently back in 2018 and hasn't reopened; its planned replacement in Pathum Thani isn't open yet either. Don't plan around it. Here's what's actually running.</p>
+    </div>
+    <div class="info-block">
+      <h4>Safari World &amp; Marine Park — the pick</h4>
+      <p>Drive-through safari plus a marine park with dolphin and sea lion shows. Best full-day option for a toddler if you don't mind the ~1–1.5hr drive out of the city. <b>Closed Mondays</b> — don't schedule this on a Monday.</p>
+      <div class="facts">
+        <span>Sat–Sun hours: 9:00–5:30pm</span>
+        <span>Tue–Fri hours: 9:00–5:00pm</span>
+        <span>Weekend dolphin shows: 1:45pm &amp; 4:15pm</span>
+        <span>Weekend sea lion shows: 11:00am &amp; 2:30pm</span>
+      </div>
+    </div>
+    <div class="info-block">
+      <h4>Sea Life Bangkok Ocean World — the fallback</h4>
+      <p>Basement of Siam Paragon, central, zero driving, fully air-conditioned. Much shorter visit (allow ~90 min–2hrs) — good if the weather's bad or the toddler's had enough of the sun by then.</p>
+      <div class="facts">
+        <span>Open daily 10:00am–8:00pm</span>
+        <span>Last entry 7:00pm</span>
+      </div>
+    </div>
+    <p style="color:var(--ink-soft); font-size:.85rem;">Since the recommended plan puts this on Saturday 28th, Safari World's weekend hours and both shows are available — no Monday conflict.</p>
+  </section>
+
+  <section id="apps">
+    <div class="sec-head">
+      <h2>Apps to install before you go</h2>
+      <p>Set these up in Kathmandu, not at the Bangkok arrivals hall — some need a working local number or a few minutes to activate.</p>
+    </div>
+    <div class="app-grid">
+      <div class="app-card"><div class="app-icon">🚗</div><div><h4>Grab</h4><p>Rides, food delivery, and the BKK↔Hua Hin transfer booking. Link a card before landing.</p></div></div>
+      <div class="app-card"><div class="app-icon">📶</div><div><h4>Airalo or Klook eSIM</h4><p>Buy a Thailand eSIM and install it before departure — activates the moment you land, no airport SIM queue with a toddler in tow.</p></div></div>
+      <div class="app-card"><div class="app-icon">🗺️</div><div><h4>Google Maps</h4><p>Download offline maps for Bangkok and Hua Hin/Cha-Am in advance, in case signal is patchy on the drive.</p></div></div>
+      <div class="app-card"><div class="app-icon">💬</div><div><h4>Google Translate</h4><p>Download the Thai offline pack; the camera translate feature is genuinely useful for menus and signage.</p></div></div>
+      <div class="app-card"><div class="app-icon">🏨</div><div><h4>Booking.com or Agoda</h4><p>For the actual hotel booking and for managing/cancelling if plans shift.</p></div></div>
+      <div class="app-card"><div class="app-icon">💱</div><div><h4>XE Currency</h4><p>Quick NPR/THB conversion for on-the-spot decisions at markets and restaurants.</p></div></div>
+      <div class="app-card"><div class="app-icon">🎟️</div><div><h4>Klook</h4><p>Skip-the-line tickets for Safari World, Sea Life, or the water park — often cheaper than gate price too.</p></div></div>
+      <div class="app-card"><div class="app-icon">🌦️</div><div><h4>Windy or a local weather app</h4><p>Late Nov is early dry season in Thailand, but a rain check the morning of the zoo day is worth 30 seconds.</p></div></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="sec-head">
+      <h2>Prep checklist, with timing</h2>
+      <p>What to do and by when, working backward from Mon 23 Nov departure.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-when">Now – 6 weeks out</div>
+        <div>
+          <h4>Lock the big decisions</h4>
+          <ul>
+            <li>Book the Thai Airways flights (Mon 23 → Sun 29 Nov)</li>
+            <li>Book both hotels — Bangkok (1–2 nights) and Hua Hin (4–5 nights)</li>
+            <li>Confirm Thailand entry requirements for Nepali passports (visa or e-visa lead time varies — check early)</li>
+            <li>Buy travel insurance covering the toddler</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">3–4 weeks out</div>
+        <div>
+          <h4>Sort the logistics</h4>
+          <ul>
+            <li>Buy and install the Thailand eSIM (activate only once you land)</li>
+            <li>Book Klook tickets for Safari World (or Sea Life) for Sat 28 Nov</li>
+            <li>Decide on the travel car seat for the BKK↔Hua Hin transfer and buy/pack it</li>
+            <li>Request crib/cot at both hotels by email or via the booking site</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">1–2 weeks out</div>
+        <div>
+          <h4>Confirm and pre-book</h4>
+          <ul>
+            <li>Pre-book the Grab/private transfer for arrival night (Mon 23, evening) so you're not searching for a ride at 9pm with a tired toddler</li>
+            <li>Reconfirm both hotel reservations and flight times</li>
+            <li>Pack list first pass — passports, meds, sunscreen, diapers, chargers</li>
+            <li>Refill/pack any regular medication with a few days' buffer</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Day before (Sun 22)</div>
+        <div>
+          <h4>Final checks</h4>
+          <ul>
+            <li>Online check-in for the Thai Airways flight if available</li>
+            <li>Charge all devices, download offline Google Maps for Bangkok + Hua Hin</li>
+            <li>Pack the cabin bag: snacks, a change of clothes, diapers, one comfort toy</li>
+            <li>Print or screenshot both hotel confirmations and the flight e-tickets</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Day of (Mon 23)</div>
+        <div>
+          <h4>Travel day</h4>
+          <ul>
+            <li>Leave for Kathmandu airport with buffer for a toddler's pace through check-in/security (Nepal Airlines RA 401, 11:10 departure)</li>
+            <li>Activate the Thailand eSIM as soon as you land at BKK (~15:45)</li>
+            <li>Book the Grab/private transfer to Hua Hin immediately after immigration/baggage</li>
+            <li>Have a change of clothes and snacks ready for the ~3hr afternoon/evening drive — you'll land in Hua Hin around dinnertime, not bedtime</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="sec-head">
+      <h2>What the days look like</h2>
+      <p>A feel for the two anchor activities — an animal day in Bangkok, and the coast.</p>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Safari_World.jpg?width=600" alt="Safari World, Bangkok" loading="lazy">
+        <figcaption>Safari World, Bangkok — drive-through safari and marine park.<a href="https://commons.wikimedia.org/wiki/File:Safari_World.jpg" target="_blank" rel="noopener">Source: Wikimedia Commons</a></figcaption>
+      </figure>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Asian_Elephant_in_Thailand.jpg?width=600" alt="Asian elephant in Thailand" loading="lazy">
+        <figcaption>An ethical elephant sanctuary — a calmer alternative to a water park.<a href="https://commons.wikimedia.org/wiki/File:Asian_Elephant_in_Thailand.jpg" target="_blank" rel="noopener">Source: Wikimedia Commons</a></figcaption>
+      </figure>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hua_Hin_Beach_evening.jpg?width=600" alt="Hua Hin beach" loading="lazy">
+        <figcaption>Hua Hin beach — the anchor for the coast days.<a href="https://commons.wikimedia.org/wiki/File:Hua_Hin_Beach_evening.jpg" target="_blank" rel="noopener">Source: Wikimedia Commons</a></figcaption>
+      </figure>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cha_Am_Beach.jpg?width=600" alt="Cha-Am beach" loading="lazy">
+        <figcaption>Cha-Am beach — quieter, fewer crowds, easier with a toddler.<a href="https://commons.wikimedia.org/wiki/File:Cha_Am_Beach.jpg" target="_blank" rel="noopener">Source: Wikimedia Commons</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="checklist">
+    <div class="sec-head">
+      <h2>Toddler travel checklist</h2>
+      <p>Everything to sort before wheels-up, regardless of which flight and split you land on.</p>
+    </div>
+    <div class="check-grid">
+      <div class="check-col">
+        <h4>Documents &amp; health</h4>
+        <ul>
+          <li>Passports valid 6+ months, photo backup on phone</li>
+          <li>Thailand entry rules confirmed for Nepali passports</li>
+          <li>Travel insurance covering the toddler</li>
+          <li>Basic kids' med kit: fever reducer, rehydration salts, antihistamine, thermometer</li>
+        </ul>
+      </div>
+      <div class="check-col">
+        <h4>Flights</h4>
+        <ul>
+          <li>Bassinet/seat type confirmed with the airline</li>
+          <li>Child meal pre-booked if available</li>
+          <li>Stroller gate-check policy confirmed</li>
+          <li>Travel car seat decision made for the BKK ↔ Hua Hin leg</li>
+        </ul>
+      </div>
+      <div class="check-col">
+        <h4>Packing</h4>
+        <ul>
+          <li>Lightweight stroller + carrier as backup</li>
+          <li>SPF 50 sunscreen, sun hat, UV swim shirt</li>
+          <li>Swim + regular diapers (top-ups easy at 7-Eleven/Tops)</li>
+          <li>Kid-safe insect repellent, familiar snacks, a couple of new small toys</li>
+        </ul>
+      </div>
+      <div class="check-col">
+        <h4>Logistics</h4>
+        <ul>
+          <li>Grab app installed and linked before landing</li>
+          <li>eSIM or airport SIM sorted on arrival</li>
+          <li>THB cash on hand for markets and small vendors</li>
+          <li>Crib/cot ("baby cot") requested at both hotels in advance</li>
+          <li>1–2 hour nap buffers built around both transfer days</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Draft for comparison, not a booking. Prices and schedules are as last checked and will shift — reconfirm before paying for anything.
+    <div class="credits">Photos hotlinked from Wikimedia Commons, credited under each image; this file needs an internet connection to display them.</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  try{
+    var buttons = document.querySelectorAll('.split-tabs button');
+    var panels = document.querySelectorAll('.split-panel');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.classList.remove('active'); });
+        panels.forEach(function(p){ p.classList.remove('active'); });
+        btn.classList.add('active');
+        var target = document.getElementById(btn.getAttribute('data-target'));
+        if(target) target.classList.add('active');
+      });
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
