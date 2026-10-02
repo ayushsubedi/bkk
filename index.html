@@ -157,17 +157,6 @@
   footer .credits{margin-top:10px; font-size:.78rem;}
   footer .credits a{color:var(--ink-soft);}
 
-  /* ---- Page nav (Trip / Cut Plan) ---- */
-  .page-nav{
-    position:sticky; top:0; z-index:20; display:flex; gap:8px; padding-block:12px;
-    background:var(--paper); border-bottom:1px solid var(--line); margin-bottom:8px;
-  }
-  .page-nav button{
-    font-family:"Work Sans", sans-serif; font-size:.9rem; font-weight:700;
-    background:transparent; border:1px solid var(--line); color:var(--ink-soft);
-    padding:9px 18px; border-radius:999px; cursor:pointer;
-  }
-  .page-nav button.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
   .page{display:none;}
   .page.active{display:block;}
 
@@ -195,11 +184,6 @@
 </head>
 <body>
 <div class="wrap">
-
-  <nav class="page-nav">
-    <button class="active" data-page="page-trip">Trip Plan</button>
-    <button data-page="page-fitness">Pre-Trip Cut Plan</button>
-  </nav>
 
   <div id="page-trip" class="page active">
 
@@ -344,6 +328,91 @@
       </div>
     </div>
 
+    <div class="sec-head" style="margin-top:26px;">
+      <h2>Hour-by-hour</h2>
+      <p>Flights and hotels treated as confirmed — times below are planning estimates, adjust as the week gets closer.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-when">Mon 23 Nov</div>
+        <div>
+          <h4>Overnight flight → Hua Hin</h4>
+          <ul>
+            <li><b>00:25</b> — TG 310 departs KTM</li>
+            <li><b>05:10</b> — Land BKK Suvarnabhumi. Immigration + bags, ~30-45min with a toddler stroller.</li>
+            <li><b>~06:15</b> — Pick up pre-ordered eSIM confirmation (or grab an airport SIM at arrivals if you skipped eSIM) and start the Grab/private transfer to Hua Hin.</li>
+            <li><b>~06:30–09:30</b> — Transfer to Dusit Thani Hua Hin (~3h with a stop). Let the toddler sleep in the car — this is the recovery window for the red-eye.</li>
+            <li><b>09:30–15:00</b> — Arrive before check-in (3pm). Use the lobby, breakfast spot, or pool day-area; ask reception about early check-in given the overnight flight.</li>
+            <li><b>15:00</b> — Check in, nap, unpack.</li>
+            <li><b>17:00–18:30</b> — Easy beach walk at sunset, light dinner, early night.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Tue 24 Nov</div>
+        <div>
+          <h4>Hua Hin — beach + pool</h4>
+          <ul>
+            <li><b>Morning (8–11am)</b> — Beach time before the midday heat.</li>
+            <li><b>11am–2pm</b> — Retreat to the resort pool/shaded kids' area during peak sun.</li>
+            <li><b>Afternoon</b> — Rest, nap, light activity around the hotel grounds.</li>
+            <li><b>Evening</b> — Dinner at the resort or a short Grab to Chatchai Market (less touristy than the main night market), early for toddler bedtime.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Wed 25 Nov</div>
+        <div>
+          <h4>Hua Hin — water park or elephants</h4>
+          <ul>
+            <li><b>Morning</b> — Vana Nava Water Jungle (go right at opening, ~9-10am, to beat heat and crowds) or Hutsadin Elephant Foundation feeding/bathing session.</li>
+            <li><b>Midday</b> — Lunch near whichever activity, nap back at hotel if needed.</li>
+            <li><b>Afternoon</b> — Pool or beach, whichever the toddler has more energy for.</li>
+            <li><b>Evening</b> — Pack for the Bangkok transfer, early night.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Thu 26 Nov</div>
+        <div>
+          <h4>Hua Hin → Bangkok</h4>
+          <ul>
+            <li><b>Before noon</b> — Checkout Dusit Thani Hua Hin.</li>
+            <li><b>~11am–2pm</b> — Transfer to Bangkok (~3h, build in a toddler stop).</li>
+            <li><b>After 3pm</b> — Check in to Holiday Inn Express Bangkok Soi Soonvijai.</li>
+            <li><b>Evening</b> — Easy dinner nearby, early night ahead of the full activity day.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Fri 27 Nov</div>
+        <div>
+          <h4>Bangkok — the one full day, animal-focused</h4>
+          <ul>
+            <li><b>7:30am</b> — Early breakfast at the hotel.</li>
+            <li><b>8:00am</b> — Grab to Safari World (~30-45min from Soi Soonvijai, longer in traffic — leave buffer).</li>
+            <li><b>9:00am</b> — Arrive at opening, start with the drive-through safari before it gets hot.</li>
+            <li><b>11:00am–1:00pm</b> — Marine Park section, shaded rest/lunch break.</li>
+            <li><b>1:45pm</b> — Dolphin/sea lion show (weekday time — confirm same-week, as schedules shift).</li>
+            <li><b>3:00–4:30pm</b> — Head back toward the hotel; if there's energy left, stop at Sea Life Bangkok (Siam Paragon) for a short air-conditioned wind-down instead of going straight back.</li>
+            <li><b>Evening</b> — Dinner, pack for the flight home.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">Sat 28 Nov</div>
+        <div>
+          <h4>Fly home</h4>
+          <ul>
+            <li><b>Before noon</b> — Checkout Holiday Inn Express.</li>
+            <li><b>~7:30am</b> — Grab to BKK airport (allow 1.5-2h for check-in + security with a toddler).</li>
+            <li><b>10:15</b> — TG 319 departs BKK.</li>
+            <li><b>12:25</b> — Land KTM.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="split-panel" id="s3">
       <div class="bar"><span class="bkk" style="flex:2">BKK</span><span class="hh" style="flex:3">Hua Hin</span></div>
       <div class="daylist">
@@ -360,13 +429,13 @@
 
   <section id="hotels">
     <div class="sec-head">
-      <h2>Hotel options</h2>
-      <p>Shortlisted for pools, connecting/family rooms, and a fit with a toddler's schedule.</p>
+      <h2>Hotels — confirmed</h2>
+      <p>Everything locked. Holiday Inn Express is the default for Bangkok — no more comparing alternatives.</p>
     </div>
 
     <div class="city-block">
-      <h3>Bangkok — Sukhumvit</h3>
-      <p class="city-note">Central, BTS-connected, easiest for a short zoo/aquarium stopover.</p>
+      <h3>Bangkok — Soi Soonvijai</h3>
+      <p class="city-note">Near New Petchburi Road in Huaykwang — not Sukhumvit proper, budget ~30-40min by Grab to Siam/Sukhumvit malls and to Safari World.</p>
       <div class="city-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sukhumvit_Road_-01.jpg?width=1000" alt="Sukhumvit Road in Bangkok" loading="lazy">
       </div>
@@ -374,72 +443,27 @@
         <div class="hotel-card picked">
           <h4>Holiday Inn Express Bangkok Soi Soonvijai By IHG</h4>
           <div class="tags"><span class="tag price">BOOKED · THB 6,602.98 / 2N</span><span class="tag">1 Queen Standard Accessible</span><span class="tag">Breakfast included</span></div>
-          <p>Thu 26 → Sat 28 Nov, 2 nights. Agoda booking ID 2055357242, pay at check-in. Near New Petchburi Road in Huaykwang — not Sukhumvit proper, so double-check travel time to Safari World/Sea Life from here.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Grande Centre Point Terminal 21</h4>
-          <div class="tags"><span class="tag price">~THB 4,500/night</span><span class="tag">Family suites</span><span class="tag">Big pool</span><span class="tag">Connecting rooms</span></div>
-          <p>Not booked — kept here for reference only.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Bandara Suites Sukhumvit 39</h4>
-          <div class="tags"><span class="tag price">~THB 3,800/night</span><span class="tag">Suites + kitchenette</span><span class="tag">Pool</span></div>
-          <p>Thai-owned, roomy suites good for toddler food/formula prep.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Ariyasom Villa</h4>
-          <div class="tags"><span class="tag price">~THB 5,500/night</span><span class="tag">Boutique</span><span class="tag">Garden pool</span><span class="tag">Quiet</span></div>
-          <p>Leafy, low-key alternative if you'd rather skip tower-hotel energy.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>JW Marriott Hotel Bangkok</h4>
-          <div class="tags"><span class="tag price">~THB 7,000/night</span><span class="tag">Chain reliability</span><span class="tag">Pool</span><span class="tag">Sukhumvit Soi 2</span></div>
-          <p>Familiar Marriott standard, central Sukhumvit, dependable for a short stopover night.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Hyatt Regency Bangkok Sukhumvit</h4>
-          <div class="tags"><span class="tag price">~THB 6,500/night</span><span class="tag">Chain reliability</span><span class="tag">Family rooms</span><span class="tag">BTS-adjacent</span></div>
-          <p>Newer Hyatt property, spacious rooms, good if loyalty points matter to you.</p>
+          <p>Thu 26 → Sat 28 Nov, 2 nights. Agoda booking ID 2055357242, pay at check-in, address 19 Soi Soonvijai, New Petchburi Road, Bangkapi, Huaykwang, Bangkok 10310. Free cancellation until 26 Oct 11:59pm Bangkok time.</p>
         </div>
       </div>
-      <p class="city-note" style="margin-top:16px;">Still deciding against the Dusit Gold portfolio (from the Hua Hin booking)? Dropping "near Sukhumvit" as the criterion — ranked instead by how central (not outskirt) and toddler-friendly they are. <b>Pathumwan Princess</b> is the current lean, for the kiddo — outdoor pool plus mall right downstairs means less Grab-dependence with a toddler in tow:</p>
-      <div class="hotel-grid">
-        <div class="hotel-card">
-          <h4>Dusit Thani Bangkok</h4>
-          <div class="tags"><span class="tag">Most central</span><span class="tag">Lumpini Park / Sala Daeng</span><span class="tag">Nicer, pricier</span></div>
-          <p>Recently renovated flagship right at the Silom/Sala Daeng BTS-MRT interchange, opposite Lumpini Park — as central as Bangkok gets, with easy reach of both old town and the Sukhumvit side. Best pick here if the budget stretches a bit.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Dusit Suites Ratchadamri Bangkok</h4>
-          <div class="tags"><span class="tag">Central</span><span class="tag">Suites + kitchenette</span><span class="tag">Mid-tier price</span></div>
-          <p>All-suite, at Ratchadamri BTS bordering Chidlom/Ploenchit/Siam — dead center of the city with good malls nearby. Strong "decent, not expensive" option, and the extra living space helps with a toddler.</p>
-        </div>
-        <div class="hotel-card picked">
-          <h4>Pathumwan Princess (MBK Center)</h4>
-          <div class="tags"><span class="tag">Leaning toward this</span><span class="tag">Outdoor pool</span><span class="tag">National Stadium BTS</span></div>
-          <p>Attached to MBK mall, central Siam area. Large, family-used-to-it hotel with a proper outdoor pool and easy stroller-level mall access right downstairs — good toddler logistics without needing a Grab for food/supplies. Usually the cheapest of the centrally-located picks here too.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>dusitD2 Samyan / ASAI Sathorn</h4>
-          <div class="tags"><span class="tag">Central, but tight rooms</span></div>
-          <p>Samyan and Sathorn are both reasonably central, not outskirts — but these are boutique/micro-room concepts, tight for a toddler plus luggage even though the location itself is fine.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>ASAI Chinatown / Royal Princess Larn Luang</h4>
-          <div class="tags"><span class="tag">Central old town, weaker fit</span></div>
-          <p>Both sit in the central old town — geographically fine, not outskirt — but Chinatown's narrow streets plus ASAI's micro rooms, and Larn Luang's lack of a nearby BTS/MRT, make either more hassle than the options above for a one-night stopover.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Dusit Princess Srinakarin</h4>
-          <div class="tags"><span class="tag">Actual outskirt — skip</span></div>
-          <p>Out in Srinakarin on the southeast edge of the city — the one property on the Dusit Gold list that's genuinely in the outskirts. Skip it for this trip.</p>
-        </div>
+      <div class="warn-block" style="margin-top:16px;">
+        <h4>If it were Pathumwan Princess instead</h4>
+        <p>Holiday Inn Express is what's booked and stays the default — but here's what would actually change if you swapped to Pathumwan Princess (MBK Center) before the cancellation deadline:</p>
+        <ul style="margin:10px 0 0; padding-left:20px; color:var(--ink-soft); font-size:.9rem; line-height:1.6;">
+          <li><b>Safari World drive gets longer, not shorter</b> — Pathumwan/Siam is more central but further from Safari World's northern location than Soi Soonvijai; figure ~45-60min instead of ~30-45min on Fri 27 Nov.</li>
+          <li><b>Sea Life Bangkok gets much closer</b> — it's in the basement of Siam Paragon, a short walk from Pathumwan Princess, vs. a Grab ride from Soi Soonvijai. Makes it easier to use as the fallback/wind-down stop after Safari World, or as a standalone half-day if the weather turns.</li>
+          <li><b>Everyday logistics get easier</b> — MBK mall is attached directly to the hotel (food, diapers, aircon breaks without a Grab), and National Stadium BTS is right there for Siam/Sukhumvit-side errands. Soi Soonvijai has less within walking distance.</li>
+          <li><b>Pool</b> — both have one; Pathumwan Princess's outdoor pool is generally rated larger/better for a toddler to splash around in than a standard Holiday Inn Express pool.</li>
+          <li><b>Price</b> — Pathumwan Princess runs a bit higher than the ~THB 3,300/night Holiday Inn Express rate, though still mid-range.</li>
+          <li><b>Hour-by-hour plan</b> — Thu 26 and Sat 28 transfer timings stay about the same either way; only the Fri 27 Safari World drive time in the hour-by-hour above would shift slightly later.</li>
+        </ul>
+        <p style="margin-top:10px;">Net: swap only matters if the mall-downstairs convenience and shorter Sea Life trip outweigh paying more and a slightly longer Safari World drive. Holiday Inn Express remains the plan unless you decide to switch.</p>
       </div>
     </div>
 
     <div class="city-block">
       <h3>Hua Hin / Cha-Am</h3>
-      <p class="city-note">Cha-Am's beach is calmer than central Hua Hin — worth weighing if the toddler is wary of waves or crowds.</p>
+      <p class="city-note">On Petchkasem Road toward Cha-Am — closer to the quieter Cha-Am stretch than central Hua Hin town.</p>
       <div class="city-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cha_Am_Beach.jpg?width=1000" alt="Cha-Am beach" loading="lazy">
       </div>
@@ -447,37 +471,7 @@
         <div class="hotel-card picked">
           <h4>Dusit Thani Hua Hin</h4>
           <div class="tags"><span class="tag price">BOOKED · $411.35 / 3N</span><span class="tag">Deluxe King</span><span class="tag">Free breakfast</span></div>
-          <p>Mon 23 → Thu 26 Nov, 3 nights. Confirmation #26547SH611025, charged in THB. Located on Petchkasem Road toward Cha-Am — closer to the quieter Cha-Am stretch than central Hua Hin town.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Let's Sea Hua Hin Al Fresco</h4>
-          <div class="tags"><span class="tag price">~THB 4,200/night</span><span class="tag">Shallow split pool</span><span class="tag">Family favorite</span></div>
-          <p>Not booked — kept here for reference only.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Veranda Resort &amp; Villas (Cha-Am)</h4>
-          <div class="tags"><span class="tag price">~THB 4,800/night</span><span class="tag">Lagoon pool</span><span class="tag">Spacious grounds</span></div>
-          <p>Quiet Cha-Am beachfront, room to roam without much traffic nearby.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Springfield@Sea Resort</h4>
-          <div class="tags"><span class="tag price">~THB 3,200/night</span><span class="tag">Beachfront</span><span class="tag">Family-run</span></div>
-          <p>Unfussy, direct beach access, good if you want low-key over polished.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Away Hua Hin</h4>
-          <div class="tags"><span class="tag price">~THB 3,600/night</span><span class="tag">Boutique</span><span class="tag">Garden pool</span></div>
-          <p>Smaller and calmer than the big resorts, still has a solid pool.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Hyatt Regency Hua Hin</h4>
-          <div class="tags"><span class="tag price">~THB 8,000/night</span><span class="tag">Chain reliability</span><span class="tag">Huge grounds</span><span class="tag">Lagoon pool</span></div>
-          <p>Large beachfront property with a proper kids' pool area and consistent Hyatt service.</p>
-        </div>
-        <div class="hotel-card">
-          <h4>Renaissance Hua Hin Resort &amp; Spa</h4>
-          <div class="tags"><span class="tag price">~THB 7,200/night</span><span class="tag">Chain reliability</span><span class="tag">Beachfront</span></div>
-          <p>Marriott-family resort, quieter stretch of beach, solid pool and family rooms.</p>
+          <p>Mon 23 → Thu 26 Nov, 3 nights. Confirmation #26547SH611025, charged in THB, address 1349 Petchkasem Road, Cha-am Petchburi 76120. Check-in after 3pm, check-out before noon, 14-day free-cancellation window.</p>
         </div>
       </div>
     </div>
@@ -485,28 +479,53 @@
 
   <section id="zoo">
     <div class="sec-head">
-      <h2>The Bangkok animal day, in detail</h2>
-      <p>One flag first: Dusit Zoo (Khao Din) — the old central Bangkok zoo — closed permanently back in 2018 and hasn't reopened; its planned replacement in Pathum Thani isn't open yet either. Don't plan around it. Here's what's actually running.</p>
+      <h2>Zoo, aquarium &amp; child-friendly spots</h2>
+      <p>One flag first: Dusit Zoo (Khao Din) — the old central Bangkok zoo — closed permanently back in 2018 and hasn't reopened; its planned replacement in Pathum Thani isn't open yet either. Don't plan around it. Here's what's actually running, in both cities.</p>
     </div>
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:18px 0 10px;">Bangkok</h3>
     <div class="info-block">
-      <h4>Safari World &amp; Marine Park — the pick</h4>
-      <p>Drive-through safari plus a marine park with dolphin and sea lion shows. Best full-day option for a toddler if you don't mind the ~1–1.5hr drive out of the city. <b>Closed Mondays</b> — don't schedule this on a Monday.</p>
+      <h4>Safari World &amp; Marine Park — the pick for Fri 27 Nov</h4>
+      <p>Drive-through safari plus a marine park with dolphin and sea lion shows. Best full-day option for a toddler if you don't mind the ~30-45min drive from Soi Soonvijai. <b>Closed Mondays</b> — not a problem for this trip since the full day lands on a Friday.</p>
       <div class="facts">
-        <span>Sat–Sun hours: 9:00–5:30pm</span>
         <span>Tue–Fri hours: 9:00–5:00pm</span>
-        <span>Weekend dolphin shows: 1:45pm &amp; 4:15pm</span>
-        <span>Weekend sea lion shows: 11:00am &amp; 2:30pm</span>
+        <span>Sat–Sun hours: 9:00–5:30pm</span>
+        <span>Weekday dolphin/sea lion show: 1:45pm</span>
+        <span>Weekend shows: 1:45pm &amp; 4:15pm (dolphin), 11am &amp; 2:30pm (sea lion)</span>
+        <span>Stroller-friendly, shaded rest areas throughout</span>
       </div>
     </div>
     <div class="info-block">
-      <h4>Sea Life Bangkok Ocean World — the fallback</h4>
-      <p>Basement of Siam Paragon, central, zero driving, fully air-conditioned. Much shorter visit (allow ~90 min–2hrs) — good if the weather's bad or the toddler's had enough of the sun by then.</p>
+      <h4>Sea Life Bangkok Ocean World — the fallback / add-on</h4>
+      <p>Basement of Siam Paragon, central, zero driving, fully air-conditioned. Much shorter visit (allow ~90 min–2hrs) — good as a wind-down after Safari World, or as a full swap if the weather's bad or the toddler's had enough sun.</p>
       <div class="facts">
         <span>Open daily 10:00am–8:00pm</span>
         <span>Last entry 7:00pm</span>
+        <span>Touch pool + glass tunnel are toddler favorites</span>
       </div>
     </div>
-    <p style="color:var(--ink-soft); font-size:.85rem;">With the Holiday Inn Express checkout on Sat 28 Nov, the one full Bangkok day is <b>Friday 27 Nov</b> — Safari World's weekday hours (9–5) and the 1:45pm dolphin/sea lion shows apply, not the weekend schedule above. Still clear of the Monday closure either way.</p>
+    <div class="info-block">
+      <h4>Lumpini Park / Benjakitti Park — free, low-key</h4>
+      <p>If there's a spare hour on the Thu 26 or Sat 28 transfer days, either park is a good no-cost place to let a toddler run around outdoors — paddle boats and a playground at Lumpini, boardwalks and a lake at Benjakitti.</p>
+    </div>
+    <p style="color:var(--ink-soft); font-size:.85rem;">With the Holiday Inn Express checkout on Sat 28 Nov, the one full Bangkok day is <b>Friday 27 Nov</b> — Safari World's weekday hours (9–5) and the 1:45pm show apply, not the weekend schedule above.</p>
+
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Hua Hin / Cha-Am</h3>
+    <div class="info-block">
+      <h4>Vana Nava Water Jungle</h4>
+      <p>Hua Hin's water park, with a dedicated shallow kids'/toddler zone. Go right at opening to beat the heat and the queues — good fit for the Wed 25 Nov activity day.</p>
+      <div class="facts">
+        <span>Open daily, typically 10am–6pm</span>
+        <span>Shallow toddler pool + slow river on-site</span>
+      </div>
+    </div>
+    <div class="info-block">
+      <h4>Hutsadin Elephant Foundation</h4>
+      <p>Ethical, no-riding elephant sanctuary — feeding and bathing experience. Calmer and shorter than the water park, good alternative for the same day if a toddler responds better to animals than water play.</p>
+    </div>
+    <div class="info-block">
+      <h4>The beach itself</h4>
+      <p>Cha-Am's beach (right by Dusit Thani) is calmer and less built-up than central Hua Hin's — fewer horse-ride vendors, gentler for a toddler wary of crowds or waves.</p>
+    </div>
   </section>
 
   <section id="apps">
@@ -523,6 +542,53 @@
       <div class="app-card"><div class="app-icon">💱</div><div><h4>XE Currency</h4><p>Quick NPR/THB conversion for on-the-spot decisions at markets and restaurants.</p></div></div>
       <div class="app-card"><div class="app-icon">🎟️</div><div><h4>Klook</h4><p>Skip-the-line tickets for Safari World, Sea Life, or the water park — often cheaper than gate price too.</p></div></div>
       <div class="app-card"><div class="app-icon">🌦️</div><div><h4>Windy or a local weather app</h4><p>Late Nov is early dry season in Thailand, but a rain check the morning of the zoo day is worth 30 seconds.</p></div></div>
+    </div>
+  </section>
+
+  <section id="hacks">
+    <div class="sec-head">
+      <h2>Hacks — SIM, transfers, money, toddler logistics</h2>
+      <p>Small decisions that save real time or hassle with a 2-year-old and an overnight flight.</p>
+    </div>
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:18px 0 10px;">SIM / data</h3>
+    <div class="info-block">
+      <h4>Buy the eSIM before you leave Kathmandu</h4>
+      <p>Airalo's Thailand eSIM (or Klook's) installs in minutes over your home WiFi and only activates once it detects a Thai network — so there's zero risk of burning data early. Landing at 05:10 after an overnight flight is the worst possible time to be queuing at an airport SIM counter with a cranky toddler; skip that queue entirely.</p>
+    </div>
+    <div class="info-block">
+      <h4>Keep your Nepali SIM active but on airplane mode + WiFi</h4>
+      <p>You'll want it live again the moment you land back in KTM. Just toggle data roaming off so it doesn't try to connect in Thailand and rack up charges.</p>
+    </div>
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Transfers &amp; getting around</h3>
+    <div class="info-block">
+      <h4>Pre-book the BKK → Hua Hin transfer, don't wing it at 05:30am</h4>
+      <p>Grab works fine, but a 3-hour fixed-route trip straight off an overnight flight is exactly the case for a pre-booked private transfer (hotel concierge, Airport Thailand transfer services, or Grab's scheduled-ride feature) — guaranteed car, fixed price, no surge pricing at an odd hour, and a driver already waiting with a sign instead of you hunting for a pickup point half-asleep with luggage and a toddler.</p>
+    </div>
+    <div class="info-block">
+      <h4>Request a car seat or bring a compact one</h4>
+      <p>Grab/taxis in Thailand rarely carry compliant child seats. A lightweight travel seat (Cosco Scenera, Mifold, or similar) packs small and covers both the 3hr Hua Hin transfer and Bangkok Grab rides.</p>
+    </div>
+    <div class="info-block">
+      <h4>Screenshot everything before you lose signal</h4>
+      <p>Save the Dusit Thani and Holiday Inn Express confirmations, the TG 310/319 e-tickets, and the Grab transfer booking as screenshots or offline PDFs — don't rely on having data at the exact moment you need to show a confirmation.</p>
+    </div>
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Money</h3>
+    <div class="info-block">
+      <h4>Carry some cash, but you won't need much</h4>
+      <p>THB cash is still useful for markets and small vendors, but hotels, Grab, and most restaurants in Bangkok/Hua Hin take cards. Withdraw from an ATM after landing rather than exchanging at the airport counter — airport exchange rates are consistently the worst in the country.</p>
+    </div>
+    <div class="info-block">
+      <h4>Holiday Inn Express is pay-at-check-in</h4>
+      <p>That Agoda booking (THB 6,602.98) is charged on arrival, not pre-paid — keep a card or enough cash on hand for check-in day specifically.</p>
+    </div>
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Overnight-flight-specific</h3>
+    <div class="info-block">
+      <h4>Shift the toddler's nap schedule a few days early</h4>
+      <p>TG 310 departs KTM at 00:25 — if your child's bedtime is earlier, a couple of days of a slightly later bedtime beforehand softens the overnight-flight shock.</p>
+    </div>
+    <div class="info-block">
+      <h4>Pack a change of clothes for everyone in the cabin bag</h4>
+      <p>Landing at 05:10 means arriving at the hotel mid-morning, hours before check-in — a quick change out of overnight-flight clothes at the pool/lobby area makes the waiting stretch much more bearable.</p>
     </div>
   </section>
 
@@ -674,224 +740,9 @@
 
   </div>
 
-  <div id="page-fitness" class="page">
-
-  <header class="hero">
-    <h1>8-Week Recomp Plan</h1>
-    <p class="sub">Gym-only, body recomposition rather than a straight cut — building muscle and losing fat at roughly the same time, at maintenance calories or a small deficit. The scale will move slowly (or barely at all some weeks); the mirror and your lift numbers are the real scoreboard here.</p>
-    <div class="route-strip">
-      <span class="route-chip">Window: <b>~8–9 weeks</b>, ending before Nov 23 departure</span>
-      <span class="route-chip">Goal: <b>visibly leaner + stronger</b>, not a target kg</span>
-      <span class="route-chip">Format: <b>6x/week gym, Saturday rest</b></span>
-    </div>
-  </header>
-
-  <section id="cut-warning">
-    <div class="warn-block">
-      <h4>How recomp is different from a cut</h4>
-      <p>Recomp works best close to maintenance calories (or a small ~200–300 kcal/day deficit at most) with high protein and progressive strength training — the idea is your body rebuilds muscle using the calories you eat while slowly drawing down fat stores, instead of dropping weight fast. It's slower to show on a scale than a cut (expect maybe 2–4kg of net weight change over 8–9 weeks, with visible shape change often outpacing that number), but it protects and builds muscle instead of risking it. If your main goal for the trip is actually a lower number on the scale, a straight cut gets there faster — recomp is the better call if you want to look leaner and stronger rather than just lighter.</p>
-    </div>
-
-    <div class="stat-row">
-      <div class="stat-tile"><span class="num-big">~0 to -300</span><span class="lbl">kcal/day vs. maintenance</span></div>
-      <div class="stat-tile"><span class="num-big">1.8–2.2g</span><span class="lbl">protein per kg bodyweight/day</span></div>
-      <div class="stat-tile"><span class="num-big">2–4kg</span><span class="lbl">realistic net change over 8–9 weeks</span></div>
-      <div class="stat-tile"><span class="num-big">5× / week</span><span class="lbl">strength sessions, progressive overload</span></div>
-    </div>
-    <p style="color:var(--ink-soft); font-size:.85rem;">Calibrate by feel and the mirror, not just the scale: if strength keeps climbing and weight is flat or dropping slightly, it's working. If weight is climbing steadily, trim 150–200 kcal/day. If strength is stalling or dropping, add 150–200 kcal/day back.</p>
-  </section>
-
-  <section id="cut-diet">
-    <div class="sec-head">
-      <h2>Your day, mapped</h2>
-      <p>Rough estimate of what you laid out — good protein backbone, but as written it's probably light on calories and carbs for 6 days/week of strength + cardio. A recomp needs enough fuel to actually push the lifts, or you're just running a cut with extra gym days.</p>
-    </div>
-
-    <div class="table-wrap">
-      <table class="week-table">
-        <thead><tr><th>Meal</th><th>As you described it</th><th class="num">Est. protein</th><th class="num">Est. calories</th></tr></thead>
-        <tbody>
-          <tr><td>Breakfast</td><td>2 slices bread + peanut butter</td><td class="num">~13g</td><td class="num">~330</td></tr>
-          <tr><td>Lunch</td><td>Small dalbhat + 5 eggs</td><td class="num">~50g</td><td class="num">~850</td></tr>
-          <tr><td>Snack</td><td>Protein shake</td><td class="num">~25g</td><td class="num">~140</td></tr>
-          <tr><td>Dinner</td><td>Protein only</td><td class="num">~35–40g</td><td class="num">~300–350</td></tr>
-          <tr><td><b>Rough total</b></td><td></td><td class="num"><b>~125–130g</b></td><td class="num"><b>~1,600–1,700</b></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="warn-block">
-      <h4>Two adjustments worth making</h4>
-      <p><b>Calories are probably too low.</b> ~1,600–1,700 kcal/day is cut-level, not recomp-level, once you're doing strength + cardio 6 days a week — for most adult men that's a meaningful deficit even before training is factored in. If you're finding energy or strength dropping in week 2–3, this is why. The easy fix without changing your structure: make lunch's dalbhat portion normal-sized instead of small (dalbhat's rice/lentils are your main carb source of the day and shouldn't be the thing you shrink), and add a piece of fruit or a handful of nuts to breakfast or as a second snack.</p>
-      <p style="margin-top:10px;"><b>Dinner as "protein only" is missing vegetables/fibre.</b> Keep it protein-focused, but add a plate of vegetables alongside — costs almost no calories, helps digestion and micronutrients, doesn't touch your macros meaningfully.</p>
-    </div>
-
-    <div class="day-split">
-      <div class="hotel-card">
-        <h4>Protein — you're doing this well</h4>
-        <div class="tags"><span class="tag">~125–130g as planned</span></div>
-        <p>5 eggs + dalbhat's dal + a shake + a dinner protein source gets you close to the 1.8–2.2g/kg target for most bodyweights already. Good backbone, don't overthink it further.</p>
-      </div>
-      <div class="hotel-card">
-        <h4>Carbs — bulk up lunch, not dinner</h4>
-        <div class="tags"><span class="tag">Fuel for the lifts</span></div>
-        <p>Make lunch's dalbhat a normal portion rather than small — that's your best window for carbs since it's midday, before the day's remaining training.</p>
-      </div>
-      <div class="hotel-card">
-        <h4>Add one more anchor point</h4>
-        <div class="tags"><span class="tag">Fruit or nuts</span></div>
-        <p>A banana, apple, or small handful of almonds with breakfast or between lunch and dinner closes most of the calorie gap without adding a full extra meal to plan.</p>
-      </div>
-      <div class="hotel-card">
-        <h4>Hydration + electrolytes</h4>
-        <div class="tags"><span class="tag">Easy to forget</span></div>
-        <p>Daily strength + cardio means daily sweat loss — plain water plus a pinch of salt or an electrolyte sachet on training days helps recovery more than people expect.</p>
-      </div>
-      <div class="hotel-card">
-        <h4>Black coffee — keep it, time it</h4>
-        <div class="tags"><span class="tag">0 calories</span><span class="tag">Pre-workout</span></div>
-        <p>Black coffee is essentially free calorically and a solid pre-workout stimulant — have it 30–45min before your session for the caffeine boost on lifts and cardio. 1–3 cups/day is fine; just keep the cutoff at least 6–8 hours before bed so it doesn't wreck sleep, which matters more than the coffee itself for recomp.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="cut-nutrients">
-    <div class="sec-head">
-      <h2>What's likely missing</h2>
-      <p>Based on bread/peanut butter, dalbhat/eggs, a shake, and a protein-only dinner — solid on protein and okay on carbs, but thin on a few things that plan doesn't cover on its own.</p>
-    </div>
-    <div class="day-split">
-      <div class="hotel-card">
-        <h4>Fibre &amp; micronutrients</h4>
-        <div class="tags"><span class="tag">Vegetables, fruit</span></div>
-        <p>Outside dalbhat's vegetable side and whatever's in it, there's not much produce in this plan. Add a vegetable side to dinner (as already suggested) and one piece of fruit a day — covers vitamin C, potassium, and fibre that a bread/eggs/protein-shake day tends to miss.</p>
-      </div>
-      <div class="hotel-card">
-        <h4>Omega-3s</h4>
-        <div class="tags"><span class="tag">Anti-inflammatory</span></div>
-        <p>Eggs and a whey shake don't carry much omega-3. Fatty fish (salmon, sardines, mackerel) once or twice a week, or a fish oil supplement, helps with recovery and joint health under daily training load.</p>
-      </div>
-      <div class="hotel-card">
-        <h4>Calcium</h4>
-        <div class="tags"><span class="tag">Bone health</span></div>
-        <p>No dairy beyond a possible whey shake in this plan. A glass of milk, some yogurt, or paneer a few times a week covers this without adding much complexity.</p>
-      </div>
-      <div class="hotel-card">
-        <h4>Vitamin D</h4>
-        <div class="tags"><span class="tag">Common gap</span></div>
-        <p>Hard to get enough from food alone regardless of diet — worth 10–15min of midday sun a few times a week if your schedule allows, or a supplement (see below), especially relevant given Kathmandu's cooler months ahead.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="cut-supplements">
-    <div class="sec-head">
-      <h2>Supplements worth considering</h2>
-      <p>None of these are required — food covers most of this if you nail the adjustments above. But for an 8-9 week recomp push, a short list is genuinely useful.</p>
-    </div>
-    <div class="table-wrap">
-      <table class="week-table">
-        <thead><tr><th>Supplement</th><th>Why</th><th>Typical dose</th></tr></thead>
-        <tbody>
-          <tr><td>Whey protein</td><td>Already in your plan — convenient way to hit the protein target</td><td>1 scoop (~25g protein) as your snack</td></tr>
-          <tr><td>Creatine monohydrate</td><td>The most evidence-backed supplement for strength and muscle gain during a recomp</td><td>3–5g/day, any time, consistency matters more than timing</td></tr>
-          <tr><td>Vitamin D3</td><td>Common gap even in sunny climates, more so with an indoor gym routine</td><td>1000–2000 IU/day</td></tr>
-          <tr><td>Omega-3 / fish oil</td><td>Covers the gap if fatty fish isn't a regular feature</td><td>1–2g combined EPA/DHA per day</td></tr>
-          <tr><td>Electrolyte sachet</td><td>Useful on training days given the daily sweat loss from strength + cardio combined</td><td>1 sachet on harder training days</td></tr>
-          <tr><td>Basic multivitamin</td><td>Cheap insurance against the fruit/veg gap while you're adjusting the diet</td><td>1/day with a meal</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="cut-steps">
-    <div class="sec-head">
-      <h2>Daily steps</h2>
-      <p>Non-exercise movement (NEAT) matters as much as the gym sessions for a recomp — it's free calorie burn that doesn't compete with recovery from lifting.</p>
-    </div>
-    <div class="stat-row">
-      <div class="stat-tile"><span class="num-big">8,000–10,000</span><span class="lbl">step target, every day including rest day</span></div>
-      <div class="stat-tile"><span class="num-big">+2,000–3,000</span><span class="lbl">extra vs. gym-day steps from lifting/cardio alone</span></div>
-    </div>
-    <p style="color:var(--ink-soft); font-size:.85rem;">Easiest way to hit it without dedicating extra time: a short walk after dinner (also aids digestion after the protein-heavy meal), taking calls standing/walking where possible, and treating Saturday's rest day as a walking day rather than a fully sedentary one — movement without added training stress is exactly what recovery days benefit from.</p>
-  </section>
-
-  <section id="cut-exercise">
-    <div class="sec-head">
-      <h2>Gym split</h2>
-      <p>Strength + cardio every day, Saturday off — as you outlined. With 6 days of combined sessions, the strength side should rotate body parts so you're not re-hitting the same muscles with no recovery; cardio stays short since it's stacked onto lifting every day.</p>
-    </div>
-    <div class="table-wrap">
-      <table class="week-table">
-        <thead><tr><th>Day</th><th>Strength focus</th><th>Cardio (after lifting)</th></tr></thead>
-        <tbody>
-          <tr><td>Mon</td><td>Upper body — push (chest/shoulders/triceps)</td><td>15–20min easy incline walk or bike</td></tr>
-          <tr><td>Tue</td><td>Lower body — squat pattern (quads/glutes)</td><td>15–20min easy pace</td></tr>
-          <tr><td>Wed</td><td>Upper body — pull (back/biceps)</td><td>15–20min easy pace</td></tr>
-          <tr><td>Thu</td><td>Lower body — hinge pattern (hamstrings/glutes/lower back)</td><td>15–20min easy pace</td></tr>
-          <tr><td>Fri</td><td>Full body / weak-point accessories</td><td>20–25min, can push slightly harder here</td></tr>
-          <tr><td>Sat</td><td>Rest</td><td>Rest — this is where the muscle actually builds</td></tr>
-          <tr><td>Sun</td><td>Light full body or repeat a weak day</td><td>15–20min easy pace</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="info-block">
-      <h4>Why rotate body parts daily</h4>
-      <p>Training every day works for recomp only if you're not hitting the same muscle group with no recovery window — that's why Mon/Wed are push/pull instead of both being "upper body," and Tue/Thu split squat vs. hinge patterns. Each muscle group still gets roughly 48 hours before it's loaded again.</p>
-    </div>
-    <div class="info-block">
-      <h4>Strength session shape</h4>
-      <p>Each day: 4–5 exercises for that day's focus, 3–4 sets of 6–10 reps. Track your weights/reps every session — recomp lives or dies on whether you're actually progressing the lifts, since that's the stimulus telling your body to build muscle instead of just maintain it. Keep cardio genuinely easy on lifting days (conversational pace) — its job here is extra calorie burn and recovery, not a second hard workout.</p>
-    </div>
-  </section>
-
-  <section id="cut-timeline">
-    <div class="sec-head">
-      <h2>Week-by-week focus</h2>
-      <p>No kg targets here on purpose — recomp is judged by strength trend, measurements and the mirror, not the scale. Take a tape measurement (waist, chest, arms) and a photo every 2 weeks; weigh in 2–3x/week and track the average, not single readings.</p>
-    </div>
-    <div class="table-wrap">
-      <table class="week-table">
-        <thead><tr><th>Week</th><th>Focus</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>Find your working weights on each main lift; establish maintenance calories and protein target</td></tr>
-          <tr><td>2</td><td>First small progression on each lift (+1 rep or a small weight jump); dial in meal timing around sessions</td></tr>
-          <tr><td>3</td><td>First measurement + photo check-in — compare to week 1, not to the goal</td></tr>
-          <tr><td>4</td><td>Halfway point — if the scale's climbed more than ~1kg with no strength gains, trim 150–200 kcal; if lifts have stalled, add 150–200 kcal</td></tr>
-          <tr><td>5</td><td>Second measurement + photo check-in; protein and sleep matter more than anything else at this point</td></tr>
-          <tr><td>6</td><td>Keep pushing the same lifts for small progressions — this is where visible change usually starts showing up</td></tr>
-          <tr><td>7</td><td>Third measurement + photo check-in; start thinking about which clothes you're packing for Thailand</td></tr>
-          <tr><td>8–9</td><td>Final check-in — judge the whole 8-9 weeks by strength gained and how you look/feel, not a single number</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <footer>
-    Directional plan, not medical advice — individual results depend on starting weight, body composition and training history. If anything feels off (persistent fatigue, joint pain, declining performance), back off rather than pushing through.
-  </footer>
-
-  </div>
-
 </div>
 
 <script>
-(function(){
-  try{
-    var navButtons = document.querySelectorAll('.page-nav button');
-    var pages = document.querySelectorAll('.page');
-    navButtons.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        navButtons.forEach(function(b){ b.classList.remove('active'); });
-        pages.forEach(function(p){ p.classList.remove('active'); });
-        btn.classList.add('active');
-        var target = document.getElementById(btn.getAttribute('data-page'));
-        if(target) target.classList.add('active');
-        window.scrollTo(0,0);
-      });
-    });
-  }catch(e){}
-})();
 (function(){
   try{
     var buttons = document.querySelectorAll('.split-tabs button');
