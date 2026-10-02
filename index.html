@@ -156,14 +156,56 @@
   footer{margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-soft); font-size:.85rem;}
   footer .credits{margin-top:10px; font-size:.78rem;}
   footer .credits a{color:var(--ink-soft);}
+
+  /* ---- Page nav (Trip / Cut Plan) ---- */
+  .page-nav{
+    position:sticky; top:0; z-index:20; display:flex; gap:8px; padding-block:12px;
+    background:var(--paper); border-bottom:1px solid var(--line); margin-bottom:8px;
+  }
+  .page-nav button{
+    font-family:"Work Sans", sans-serif; font-size:.9rem; font-weight:700;
+    background:transparent; border:1px solid var(--line); color:var(--ink-soft);
+    padding:9px 18px; border-radius:999px; cursor:pointer;
+  }
+  .page-nav button.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .page{display:none;}
+  .page.active{display:block;}
+
+  /* ---- Cut plan specifics ---- */
+  .warn-block{
+    background:var(--paper-raise); border:1px solid var(--line); border-left:4px solid var(--coral);
+    border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); margin-bottom:20px;
+  }
+  .warn-block h4{margin:0 0 6px; font-size:1rem;}
+  .warn-block p{margin:0; color:var(--ink-soft); font-size:.9rem;}
+  .stat-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin:18px 0;}
+  .stat-tile{background:var(--paper-raise); border:1px solid var(--line); border-radius:12px; padding:14px 16px; box-shadow:var(--shadow);}
+  .stat-tile .num-big{font-family:"IBM Plex Mono",monospace; font-size:1.4rem; font-weight:600; color:var(--teal-deep); display:block;}
+  .stat-tile .lbl{font-size:.76rem; color:var(--ink-soft); margin-top:2px; display:block;}
+  .week-table{width:100%; border-collapse:collapse; font-size:.88rem;}
+  .week-table th, .week-table td{text-align:left; padding:9px 10px; border-bottom:1px solid var(--line);}
+  .week-table th{font-family:"IBM Plex Mono",monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); font-weight:600;}
+  .week-table td.num{font-variant-numeric:tabular-nums; font-family:"IBM Plex Mono",monospace;}
+  .table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:24px;}
+  .table-wrap .week-table{margin:0;}
+  .table-wrap th:first-child, .table-wrap td:first-child{padding-left:16px;}
+  .day-split{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:14px; margin-bottom:24px;}
+  .day-split .hotel-card h4{font-size:.95rem;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
+  <nav class="page-nav">
+    <button class="active" data-page="page-trip">Trip Plan</button>
+    <button data-page="page-fitness">Pre-Trip Cut Plan</button>
+  </nav>
+
+  <div id="page-trip" class="page active">
+
   <header class="hero">
     <h1>Bangkok &amp; Hua Hin, with a two-year-old</h1>
-    <p class="sub">Nothing here is booked yet — this page lays out every flight, night-split, and hotel option side by side so you and Salina can pick before we lock a single day-by-day plan. Current thinking: 6 nights, Nepal Airlines out and Thai Airways back, straight to Hua Hin from the airport, Bangkok last.</p>
+    <p class="sub">Hotels are booked: Dusit Thani Hua Hin (3 nights) then Holiday Inn Express Bangkok Soi Soonvijai (2 nights), Mon 23 → Sat 28 Nov — 5 nights total, straight to Hua Hin first as planned. Flights are the one piece still open; options below are kept for comparison against whatever actually gets booked.</p>
     <div class="route-strip">
       <span class="route-chip">From <b>Kathmandu (KTM)</b></span>
       <span class="route-chip">To <b>Bangkok (BKK)</b> + <b>Hua Hin / Cha-Am</b></span>
@@ -187,47 +229,59 @@
     <div class="recommend">
       <svg class="rec-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" fill="var(--teal)"/></svg>
       <div>
-        <div class="eyebrow">Best case, all things considered</div>
-        <h3>Nepal Airlines out, Thai Airways back · Mon 23 → Sun 29 Nov · 6 nights</h3>
-        <p>Fly Nepal Airlines to Bangkok (lands 15:45, afternoon light) so the Hua Hin transfer arrives around 19:00 instead of 21:30 — a real bedtime, not a toddler-meltdown one. Fly Thai Airways back on whichever day suits, since it's daily. Mixing carriers gets you the cheaper, better-timed outbound leg and full return-date flexibility in one booking.</p>
+        <div class="eyebrow">Confirmed — hotels + flights booked</div>
+        <h3>Mon 23 → Sat 28 Nov · 5 nights · Hua Hin first, Bangkok last</h3>
+        <p>Dusit Thani Hua Hin (Deluxe King, Mon 23 → Thu 26 Nov, 3 nights, confirmation #26547SH611025, $411.35 charged in THB) then Holiday Inn Express Bangkok Soi Soonvijai By IHG (1 Queen Standard Accessible w/ breakfast, Thu 26 → Sat 28 Nov, 2 nights, Agoda booking ID 2055357242, THB 6,602.98 payable at check-in). Flights: Thai Airways TG 310 KTM→BKK overnight on Mon 23 Nov (00:25-05:10) and TG 319 BKK→KTM on Sat 28 Nov (10:15-12:25) — PNR 5AYOUF, 180,195 NPR total.</p>
         <div class="why">
-          <span>Arrives Hua Hin ~19:00, not ~21:30</span>
-          <span>6 full nights</span>
-          <span>Return date fully flexible</span>
-          <span>Cheaper outbound leg</span>
+          <span>Hua Hin: Dusit Thani, 3N</span>
+          <span>Bangkok: Holiday Inn Express, 2N</span>
+          <span>TG 310 · 23 Nov 00:25 KTM→BKK</span>
+          <span>TG 319 · 28 Nov 10:15 BKK→KTM</span>
+          <span>PNR 5AYOUF</span>
         </div>
       </div>
     </div>
-    <p style="color:var(--ink-soft); font-size:.87rem; margin-top:12px;">Two one-way tickets instead of a round-trip fare — usually a bit more than a single round-trip ticket, but the earlier arrival is worth it with a toddler. If you'd rather keep one airline for the whole trip, the all–Thai Airways 6-night version is right below.</p>
+    <p style="color:var(--ink-soft); font-size:.87rem; margin-top:12px;">Note on the red-eye: TG 310 departs KTM 00:25 and lands BKK 05:10 — that's technically the very early hours of Mon 23 Nov, so the family will be landing before dawn and heading straight to Hua Hin on very little sleep. Worth planning for a quiet, low-key first morning and letting everyone nap once checked in — Dusit Thani's check-in is typically after 3pm, so there may be a few hours to fill (hotel lobby/pool/breakfast) before the room is ready; worth calling ahead to ask about an early check-in given the overnight flight.</p>
   </section>
 
   <section id="flights">
     <div class="sec-head">
       <h2>Flight options</h2>
-      <p>All fares shown are economy per adult, as quoted — check current price and seat count before booking. The mixed-carrier pairing above is recommended; here's how the individual legs and full-airline alternatives compare.</p>
+      <p>Booked: TG 310 out / TG 319 back (PNR 5AYOUF, 180,195 NPR). Other options below are kept for reference only — nothing else needs action.</p>
     </div>
     <div class="opt-grid">
 
       <div class="opt-card picked">
-        <div class="airline"><b>Nepal Airlines · RA 401</b><span class="badge mon">Outbound</span></div>
+        <div class="airline"><b>Thai Airways · TG 310</b><span class="badge flex">BOOKED · Outbound</span></div>
+        <div class="leg">
+          <div class="place"><span class="time">00:25</span><span class="code">KTM</span></div>
+          <div class="mid"><span>4h45m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">05:10</span><span class="code">BKK</span></div>
+        </div>
+        <div class="meta-line">Mon 23 Nov 2026 · class A</div>
+        <div class="opt-foot"><span>Overnight red-eye — land before dawn, straight to Hua Hin; plan a slow first morning</span><span class="price num">Booked</span></div>
+      </div>
+
+      <div class="opt-card picked">
+        <div class="airline"><b>Thai Airways · TG 319</b><span class="badge flex">BOOKED · Return</span></div>
+        <div class="leg">
+          <div class="place"><span class="time">10:15</span><span class="code">BKK</span></div>
+          <div class="mid"><span>2h10m</span><div class="line"></div><span>nonstop</span></div>
+          <div class="place"><span class="time">12:25</span><span class="code">KTM</span></div>
+        </div>
+        <div class="meta-line">Sat 28 Nov 2026 · class W</div>
+        <div class="opt-foot"><span>Matches the Sat 28 Nov hotel checkout — same-day airport run from Bangkok</span><span class="price num">Booked</span></div>
+      </div>
+
+      <div class="opt-card">
+        <div class="airline"><b>Nepal Airlines · RA 401</b><span class="badge mon">Not booked</span></div>
         <div class="leg">
           <div class="place"><span class="time">11:10</span><span class="code">KTM</span></div>
           <div class="mid"><span>3h20m</span><div class="line"></div><span>nonstop</span></div>
           <div class="place"><span class="time">15:45</span><span class="code">BKK</span></div>
         </div>
         <div class="meta-line">Mon 23 Nov 2026 · one-way</div>
-        <div class="opt-foot"><span>Daytime arrival — transfer lands in Hua Hin before dinner, not after</span><span class="price num">≈ NPR 35,000</span></div>
-      </div>
-
-      <div class="opt-card picked">
-        <div class="airline"><b>Thai Airways · TG 321</b><span class="badge flex">Return</span></div>
-        <div class="leg">
-          <div class="place"><span class="time">TBD</span><span class="code">BKK</span></div>
-          <div class="mid"><span>~3h30m</span><div class="line"></div><span>nonstop</span></div>
-          <div class="place"><span class="time">TBD</span><span class="code">KTM</span></div>
-        </div>
-        <div class="meta-line">Sun 29 Nov 2026 · one-way, flies daily</div>
-        <div class="opt-foot"><span>Any return date works — daily service, no Mon/Fri constraint</span><span class="price num">≈ NPR 48,000</span></div>
+        <div class="opt-foot"><span>Kept for reference — daytime arrival would've skipped the overnight flight, but TG 310/319 is what's booked</span><span class="price num">≈ NPR 35,000</span></div>
       </div>
 
       <div class="opt-card">
@@ -243,8 +297,8 @@
           <div class="mid"><span>~3h30m</span><div class="line"></div><span>nonstop</span></div>
           <div class="place"><span class="time">TBD</span><span class="code">KTM</span></div>
         </div>
-        <div class="meta-line">Sun 29 Nov 2026</div>
-        <div class="opt-foot"><span>6 nights, single airline — but lands 18:15, transfer arrives ~21:30</span><span class="price num">≈ NPR 87,462</span></div>
+        <div class="meta-line">Not booked</div>
+        <div class="opt-foot"><span>Daytime single-airline option — not what was booked, kept for comparison</span><span class="price num">≈ NPR 87,462</span></div>
       </div>
 
       <div class="opt-card">
@@ -261,24 +315,7 @@
           <div class="place"><span class="time">19:00</span><span class="code">KTM</span></div>
         </div>
         <div class="meta-line">Fri 27 Nov 2026</div>
-        <div class="opt-foot"><span>7 nights · same good hours, longest trip</span><span class="price num">≈ NPR 71,481</span></div>
-      </div>
-
-      <div class="opt-card">
-        <div class="airline"><b>Thai Airways · TG 310</b><span class="badge flex">Daily</span></div>
-        <div class="leg">
-          <div class="place"><span class="time">00:25</span><span class="code">KTM</span></div>
-          <div class="mid"><span>3h30m</span><div class="line"></div><span>nonstop</span></div>
-          <div class="place"><span class="time">05:10</span><span class="code">BKK</span></div>
-        </div>
-        <div class="meta-line">Overnight departure</div>
-        <div class="leg rtl">
-          <div class="place"><span class="time">TBD</span><span class="code">BKK</span></div>
-          <div class="mid"><span>~3h30m</span><div class="line"></div><span>nonstop</span></div>
-          <div class="place"><span class="time">TBD</span><span class="code">KTM</span></div>
-        </div>
-        <div class="meta-line">Flexible return</div>
-        <div class="opt-foot"><span>Red-eye — arrive exhausted with a toddler; not recommended</span><span class="price num">≈ NPR 87,462</span></div>
+        <div class="opt-foot"><span>7 nights · not what was booked, kept for reference</span><span class="price num">≈ NPR 71,481</span></div>
       </div>
 
     </div>
@@ -286,52 +323,39 @@
 
   <section id="split">
     <div class="sec-head">
-      <h2>How to split the nights</h2>
-      <p>Three ways to divide the trip between the city and the coast, all 5 nights or longer. Tap a scenario to see the shape of the days.</p>
+      <h2>The actual days</h2>
+      <p>Locked by the hotel dates — Dusit Thani Hua Hin checks out Thu 26, Holiday Inn Express Bangkok checks out Sat 28. One alternate split is kept below for reference only (not booked).</p>
     </div>
 
     <div class="split-tabs" role="tablist">
-      <button class="active" data-target="s0">6 nights · straight to Hua Hin · Recommended</button>
-      <button data-target="s5">5 nights · straight to Hua Hin</button>
-      <button data-target="s3">5 nights · 2 BKK / 3 HH</button>
+      <button class="active" data-target="s5">Confirmed · 5 nights</button>
+      <button data-target="s3">Alternate (not booked) · Bangkok first</button>
     </div>
 
-    <div class="split-panel active" id="s0">
-      <div class="bar"><span class="hh" style="flex:4">Hua Hin</span><span class="bkk" style="flex:2">BKK</span></div>
-      <div class="daylist">
-        <div class="day-row hh"><div class="d">Mon<b>23</b></div><div><div class="loc">Hua Hin</div><p>Land BKK 15:45 (Nepal Airlines), Grab/private transfer direct to Hua Hin (~3h), arrive ~19:00, dinner and normal bedtime.</p></div></div>
-        <div class="day-row hh"><div class="d">Tue<b>24</b></div><div><div class="loc">Hua Hin</div><p>Full beach + pool day, recover from the travel day.</p></div></div>
-        <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary.</p></div></div>
-        <div class="day-row hh"><div class="d">Thu<b>26</b></div><div><div class="loc">Hua Hin</div><p>Unhurried extra coast day — the one this split buys you back. Beach, pool, Cicada Market if it's a weekend.</p></div></div>
-        <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Bangkok</div><p>Late-morning swim, transfer back to Bangkok in the afternoon, check in, easy dinner.</p></div></div>
-        <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day — Safari World is open Sat with the best hours (9–5:30) and both animal shows.</p></div></div>
-        <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Bangkok</div><p>Transfer to BKK, fly home.</p></div></div>
-      </div>
-    </div>
-
-    <div class="split-panel" id="s5">
+    <div class="split-panel active" id="s5">
       <div class="bar"><span class="hh" style="flex:3">Hua Hin</span><span class="bkk" style="flex:2">BKK</span></div>
       <div class="daylist">
-        <div class="day-row hh"><div class="d">Tue<b>24</b></div><div><div class="loc">Hua Hin</div><p>Land BKK 18:15, transfer direct to Hua Hin (~3h), arrive ~21:00–21:30.</p></div></div>
-        <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Full beach + pool day.</p></div></div>
-        <div class="day-row hh"><div class="d">Thu<b>26</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary.</p></div></div>
-        <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Bangkok</div><p>Transfer back to Bangkok, check in, easy dinner.</p></div></div>
-        <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day.</p></div></div>
-        <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Bangkok</div><p>Transfer to BKK, fly home.</p></div></div>
+        <div class="day-row hh"><div class="d">Mon<b>23</b></div><div><div class="loc">Hua Hin</div><p>TG 310 lands BKK 05:10 (overnight flight), transfer direct to Dusit Thani Hua Hin (~3h). Check-in after 3pm — plan a slow morning, ask about early check-in.</p></div></div>
+        <div class="day-row hh"><div class="d">Tue<b>24</b></div><div><div class="loc">Hua Hin</div><p>Full beach + pool day.</p></div></div>
+        <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary.</p></div></div>
+        <div class="day-row bkk"><div class="d">Thu<b>26</b></div><div><div class="loc">Bangkok</div><p>Checkout Dusit Thani before noon, transfer to Bangkok, check in to Holiday Inn Express after 3pm, easy dinner.</p></div></div>
+        <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day — Safari World on weekday hours (9am–5pm, dolphin show 1:45pm).</p></div></div>
+        <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Checkout before noon, transfer to BKK airport for TG 319, departs 10:15, lands KTM 12:25.</p></div></div>
       </div>
     </div>
 
     <div class="split-panel" id="s3">
       <div class="bar"><span class="bkk" style="flex:2">BKK</span><span class="hh" style="flex:3">Hua Hin</span></div>
       <div class="daylist">
-        <div class="day-row bkk"><div class="d">Tue<b>24</b></div><div><div class="loc">Bangkok</div><p>Evening arrival, easy dinner, early night.</p></div></div>
-        <div class="day-row bkk"><div class="d">Wed<b>25</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day, park stroll or pool time in the late afternoon.</p></div></div>
-        <div class="day-row hh"><div class="d">Thu<b>26</b></div><div><div class="loc">Hua Hin</div><p>Morning transfer, first afternoon on the beach.</p></div></div>
-        <div class="day-row hh"><div class="d">Fri<b>27</b></div><div><div class="loc">Hua Hin</div><p>Beach + pool, Cicada Market in the evening if it's a weekend.</p></div></div>
-        <div class="day-row hh"><div class="d">Sat<b>28</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary, unhurried last full day.</p></div></div>
-        <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Bangkok</div><p>Transfer to BKK, fly home.</p></div></div>
+        <div class="day-row bkk"><div class="d">Mon<b>23</b></div><div><div class="loc">Bangkok</div><p>Evening arrival, easy dinner, early night.</p></div></div>
+        <div class="day-row bkk"><div class="d">Tue<b>24</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day, park stroll or pool time in the late afternoon.</p></div></div>
+        <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Morning transfer, first afternoon on the beach.</p></div></div>
+        <div class="day-row hh"><div class="d">Thu<b>26</b></div><div><div class="loc">Hua Hin</div><p>Beach + pool, Cicada Market in the evening if it's a weekend.</p></div></div>
+        <div class="day-row hh"><div class="d">Fri<b>27</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary, unhurried last full day.</p></div></div>
+        <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Transfer to BKK, fly home.</p></div></div>
       </div>
     </div>
+    <p style="color:var(--ink-soft); font-size:.85rem; margin-top:4px;">The alternate would have needed different hotel dates than what's actually booked — shown only so you can see what was considered.</p>
   </section>
 
   <section id="hotels">
@@ -348,9 +372,14 @@
       </div>
       <div class="hotel-grid">
         <div class="hotel-card picked">
+          <h4>Holiday Inn Express Bangkok Soi Soonvijai By IHG</h4>
+          <div class="tags"><span class="tag price">BOOKED · THB 6,602.98 / 2N</span><span class="tag">1 Queen Standard Accessible</span><span class="tag">Breakfast included</span></div>
+          <p>Thu 26 → Sat 28 Nov, 2 nights. Agoda booking ID 2055357242, pay at check-in. Near New Petchburi Road in Huaykwang — not Sukhumvit proper, so double-check travel time to Safari World/Sea Life from here.</p>
+        </div>
+        <div class="hotel-card">
           <h4>Grande Centre Point Terminal 21</h4>
           <div class="tags"><span class="tag price">~THB 4,500/night</span><span class="tag">Family suites</span><span class="tag">Big pool</span><span class="tag">Connecting rooms</span></div>
-          <p>Right by the BTS and a mall for emergencies — easiest logistics for one city night either side of the transfer.</p>
+          <p>Not booked — kept here for reference only.</p>
         </div>
         <div class="hotel-card">
           <h4>Bandara Suites Sukhumvit 39</h4>
@@ -373,6 +402,39 @@
           <p>Newer Hyatt property, spacious rooms, good if loyalty points matter to you.</p>
         </div>
       </div>
+      <p class="city-note" style="margin-top:16px;">Still deciding against the Dusit Gold portfolio (from the Hua Hin booking)? Dropping "near Sukhumvit" as the criterion — ranked instead by how central (not outskirt) and toddler-friendly they are:</p>
+      <div class="hotel-grid">
+        <div class="hotel-card">
+          <h4>Dusit Thani Bangkok</h4>
+          <div class="tags"><span class="tag">Most central</span><span class="tag">Lumpini Park / Sala Daeng</span><span class="tag">Nicer, pricier</span></div>
+          <p>Recently renovated flagship right at the Silom/Sala Daeng BTS-MRT interchange, opposite Lumpini Park — as central as Bangkok gets, with easy reach of both old town and the Sukhumvit side. Best pick here if the budget stretches a bit.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Dusit Suites Ratchadamri Bangkok</h4>
+          <div class="tags"><span class="tag">Central</span><span class="tag">Suites + kitchenette</span><span class="tag">Mid-tier price</span></div>
+          <p>All-suite, at Ratchadamri BTS bordering Chidlom/Ploenchit/Siam — dead center of the city with good malls nearby. Strong "decent, not expensive" option, and the extra living space helps with a toddler.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Pathumwan Princess (MBK Center)</h4>
+          <div class="tags"><span class="tag">Good value</span><span class="tag">Outdoor pool</span><span class="tag">National Stadium BTS</span></div>
+          <p>Attached to MBK mall, central Siam area. Large, family-used-to-it hotel, usually the cheapest of the centrally-located picks here.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>dusitD2 Samyan / ASAI Sathorn</h4>
+          <div class="tags"><span class="tag">Central, but tight rooms</span></div>
+          <p>Samyan and Sathorn are both reasonably central, not outskirts — but these are boutique/micro-room concepts, tight for a toddler plus luggage even though the location itself is fine.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>ASAI Chinatown / Royal Princess Larn Luang</h4>
+          <div class="tags"><span class="tag">Central old town, weaker fit</span></div>
+          <p>Both sit in the central old town — geographically fine, not outskirt — but Chinatown's narrow streets plus ASAI's micro rooms, and Larn Luang's lack of a nearby BTS/MRT, make either more hassle than the options above for a one-night stopover.</p>
+        </div>
+        <div class="hotel-card">
+          <h4>Dusit Princess Srinakarin</h4>
+          <div class="tags"><span class="tag">Actual outskirt — skip</span></div>
+          <p>Out in Srinakarin on the southeast edge of the city — the one property on the Dusit Gold list that's genuinely in the outskirts. Skip it for this trip.</p>
+        </div>
+      </div>
     </div>
 
     <div class="city-block">
@@ -383,9 +445,14 @@
       </div>
       <div class="hotel-grid">
         <div class="hotel-card picked">
+          <h4>Dusit Thani Hua Hin</h4>
+          <div class="tags"><span class="tag price">BOOKED · $411.35 / 3N</span><span class="tag">Deluxe King</span><span class="tag">Free breakfast</span></div>
+          <p>Mon 23 → Thu 26 Nov, 3 nights. Confirmation #26547SH611025, charged in THB. Located on Petchkasem Road toward Cha-Am — closer to the quieter Cha-Am stretch than central Hua Hin town.</p>
+        </div>
+        <div class="hotel-card">
           <h4>Let's Sea Hua Hin Al Fresco</h4>
           <div class="tags"><span class="tag price">~THB 4,200/night</span><span class="tag">Shallow split pool</span><span class="tag">Family favorite</span></div>
-          <p>Pool is famously calm and shallow — built with young kids in mind.</p>
+          <p>Not booked — kept here for reference only.</p>
         </div>
         <div class="hotel-card">
           <h4>Veranda Resort &amp; Villas (Cha-Am)</h4>
@@ -439,7 +506,7 @@
         <span>Last entry 7:00pm</span>
       </div>
     </div>
-    <p style="color:var(--ink-soft); font-size:.85rem;">Since the recommended plan puts this on Saturday 28th, Safari World's weekend hours and both shows are available — no Monday conflict.</p>
+    <p style="color:var(--ink-soft); font-size:.85rem;">With the Holiday Inn Express checkout on Sat 28 Nov, the one full Bangkok day is <b>Friday 27 Nov</b> — Safari World's weekday hours (9–5) and the 1:45pm dolphin/sea lion shows apply, not the weekend schedule above. Still clear of the Monday closure either way.</p>
   </section>
 
   <section id="apps">
@@ -470,10 +537,11 @@
         <div>
           <h4>Lock the big decisions</h4>
           <ul>
-            <li>Book the Thai Airways flights (Mon 23 → Sun 29 Nov)</li>
-            <li>Book both hotels — Bangkok (1–2 nights) and Hua Hin (4–5 nights)</li>
+            <li>✓ Flights booked — TG 310 (23 Nov, 00:25 KTM→BKK) / TG 319 (28 Nov, 10:15 BKK→KTM), PNR 5AYOUF</li>
+            <li>✓ Hotels booked — Dusit Thani Hua Hin (3N) and Holiday Inn Express Bangkok Soi Soonvijai (2N)</li>
             <li>Confirm Thailand entry requirements for Nepali passports (visa or e-visa lead time varies — check early)</li>
             <li>Buy travel insurance covering the toddler</li>
+            <li>Call Dusit Thani Hua Hin ahead about early check-in given the 05:10 overnight-flight arrival</li>
           </ul>
         </div>
       </div>
@@ -604,9 +672,226 @@
     <div class="credits">Photos hotlinked from Wikimedia Commons, credited under each image; this file needs an internet connection to display them.</div>
   </footer>
 
+  </div>
+
+  <div id="page-fitness" class="page">
+
+  <header class="hero">
+    <h1>8-Week Recomp Plan</h1>
+    <p class="sub">Gym-only, body recomposition rather than a straight cut — building muscle and losing fat at roughly the same time, at maintenance calories or a small deficit. The scale will move slowly (or barely at all some weeks); the mirror and your lift numbers are the real scoreboard here.</p>
+    <div class="route-strip">
+      <span class="route-chip">Window: <b>~8–9 weeks</b>, ending before Nov 23 departure</span>
+      <span class="route-chip">Goal: <b>visibly leaner + stronger</b>, not a target kg</span>
+      <span class="route-chip">Format: <b>6x/week gym, Saturday rest</b></span>
+    </div>
+  </header>
+
+  <section id="cut-warning">
+    <div class="warn-block">
+      <h4>How recomp is different from a cut</h4>
+      <p>Recomp works best close to maintenance calories (or a small ~200–300 kcal/day deficit at most) with high protein and progressive strength training — the idea is your body rebuilds muscle using the calories you eat while slowly drawing down fat stores, instead of dropping weight fast. It's slower to show on a scale than a cut (expect maybe 2–4kg of net weight change over 8–9 weeks, with visible shape change often outpacing that number), but it protects and builds muscle instead of risking it. If your main goal for the trip is actually a lower number on the scale, a straight cut gets there faster — recomp is the better call if you want to look leaner and stronger rather than just lighter.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="num-big">~0 to -300</span><span class="lbl">kcal/day vs. maintenance</span></div>
+      <div class="stat-tile"><span class="num-big">1.8–2.2g</span><span class="lbl">protein per kg bodyweight/day</span></div>
+      <div class="stat-tile"><span class="num-big">2–4kg</span><span class="lbl">realistic net change over 8–9 weeks</span></div>
+      <div class="stat-tile"><span class="num-big">5× / week</span><span class="lbl">strength sessions, progressive overload</span></div>
+    </div>
+    <p style="color:var(--ink-soft); font-size:.85rem;">Calibrate by feel and the mirror, not just the scale: if strength keeps climbing and weight is flat or dropping slightly, it's working. If weight is climbing steadily, trim 150–200 kcal/day. If strength is stalling or dropping, add 150–200 kcal/day back.</p>
+  </section>
+
+  <section id="cut-diet">
+    <div class="sec-head">
+      <h2>Your day, mapped</h2>
+      <p>Rough estimate of what you laid out — good protein backbone, but as written it's probably light on calories and carbs for 6 days/week of strength + cardio. A recomp needs enough fuel to actually push the lifts, or you're just running a cut with extra gym days.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="week-table">
+        <thead><tr><th>Meal</th><th>As you described it</th><th class="num">Est. protein</th><th class="num">Est. calories</th></tr></thead>
+        <tbody>
+          <tr><td>Breakfast</td><td>2 slices bread + peanut butter</td><td class="num">~13g</td><td class="num">~330</td></tr>
+          <tr><td>Lunch</td><td>Small dalbhat + 5 eggs</td><td class="num">~50g</td><td class="num">~850</td></tr>
+          <tr><td>Snack</td><td>Protein shake</td><td class="num">~25g</td><td class="num">~140</td></tr>
+          <tr><td>Dinner</td><td>Protein only</td><td class="num">~35–40g</td><td class="num">~300–350</td></tr>
+          <tr><td><b>Rough total</b></td><td></td><td class="num"><b>~125–130g</b></td><td class="num"><b>~1,600–1,700</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warn-block">
+      <h4>Two adjustments worth making</h4>
+      <p><b>Calories are probably too low.</b> ~1,600–1,700 kcal/day is cut-level, not recomp-level, once you're doing strength + cardio 6 days a week — for most adult men that's a meaningful deficit even before training is factored in. If you're finding energy or strength dropping in week 2–3, this is why. The easy fix without changing your structure: make lunch's dalbhat portion normal-sized instead of small (dalbhat's rice/lentils are your main carb source of the day and shouldn't be the thing you shrink), and add a piece of fruit or a handful of nuts to breakfast or as a second snack.</p>
+      <p style="margin-top:10px;"><b>Dinner as "protein only" is missing vegetables/fibre.</b> Keep it protein-focused, but add a plate of vegetables alongside — costs almost no calories, helps digestion and micronutrients, doesn't touch your macros meaningfully.</p>
+    </div>
+
+    <div class="day-split">
+      <div class="hotel-card">
+        <h4>Protein — you're doing this well</h4>
+        <div class="tags"><span class="tag">~125–130g as planned</span></div>
+        <p>5 eggs + dalbhat's dal + a shake + a dinner protein source gets you close to the 1.8–2.2g/kg target for most bodyweights already. Good backbone, don't overthink it further.</p>
+      </div>
+      <div class="hotel-card">
+        <h4>Carbs — bulk up lunch, not dinner</h4>
+        <div class="tags"><span class="tag">Fuel for the lifts</span></div>
+        <p>Make lunch's dalbhat a normal portion rather than small — that's your best window for carbs since it's midday, before the day's remaining training.</p>
+      </div>
+      <div class="hotel-card">
+        <h4>Add one more anchor point</h4>
+        <div class="tags"><span class="tag">Fruit or nuts</span></div>
+        <p>A banana, apple, or small handful of almonds with breakfast or between lunch and dinner closes most of the calorie gap without adding a full extra meal to plan.</p>
+      </div>
+      <div class="hotel-card">
+        <h4>Hydration + electrolytes</h4>
+        <div class="tags"><span class="tag">Easy to forget</span></div>
+        <p>Daily strength + cardio means daily sweat loss — plain water plus a pinch of salt or an electrolyte sachet on training days helps recovery more than people expect.</p>
+      </div>
+      <div class="hotel-card">
+        <h4>Black coffee — keep it, time it</h4>
+        <div class="tags"><span class="tag">0 calories</span><span class="tag">Pre-workout</span></div>
+        <p>Black coffee is essentially free calorically and a solid pre-workout stimulant — have it 30–45min before your session for the caffeine boost on lifts and cardio. 1–3 cups/day is fine; just keep the cutoff at least 6–8 hours before bed so it doesn't wreck sleep, which matters more than the coffee itself for recomp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cut-nutrients">
+    <div class="sec-head">
+      <h2>What's likely missing</h2>
+      <p>Based on bread/peanut butter, dalbhat/eggs, a shake, and a protein-only dinner — solid on protein and okay on carbs, but thin on a few things that plan doesn't cover on its own.</p>
+    </div>
+    <div class="day-split">
+      <div class="hotel-card">
+        <h4>Fibre &amp; micronutrients</h4>
+        <div class="tags"><span class="tag">Vegetables, fruit</span></div>
+        <p>Outside dalbhat's vegetable side and whatever's in it, there's not much produce in this plan. Add a vegetable side to dinner (as already suggested) and one piece of fruit a day — covers vitamin C, potassium, and fibre that a bread/eggs/protein-shake day tends to miss.</p>
+      </div>
+      <div class="hotel-card">
+        <h4>Omega-3s</h4>
+        <div class="tags"><span class="tag">Anti-inflammatory</span></div>
+        <p>Eggs and a whey shake don't carry much omega-3. Fatty fish (salmon, sardines, mackerel) once or twice a week, or a fish oil supplement, helps with recovery and joint health under daily training load.</p>
+      </div>
+      <div class="hotel-card">
+        <h4>Calcium</h4>
+        <div class="tags"><span class="tag">Bone health</span></div>
+        <p>No dairy beyond a possible whey shake in this plan. A glass of milk, some yogurt, or paneer a few times a week covers this without adding much complexity.</p>
+      </div>
+      <div class="hotel-card">
+        <h4>Vitamin D</h4>
+        <div class="tags"><span class="tag">Common gap</span></div>
+        <p>Hard to get enough from food alone regardless of diet — worth 10–15min of midday sun a few times a week if your schedule allows, or a supplement (see below), especially relevant given Kathmandu's cooler months ahead.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cut-supplements">
+    <div class="sec-head">
+      <h2>Supplements worth considering</h2>
+      <p>None of these are required — food covers most of this if you nail the adjustments above. But for an 8-9 week recomp push, a short list is genuinely useful.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="week-table">
+        <thead><tr><th>Supplement</th><th>Why</th><th>Typical dose</th></tr></thead>
+        <tbody>
+          <tr><td>Whey protein</td><td>Already in your plan — convenient way to hit the protein target</td><td>1 scoop (~25g protein) as your snack</td></tr>
+          <tr><td>Creatine monohydrate</td><td>The most evidence-backed supplement for strength and muscle gain during a recomp</td><td>3–5g/day, any time, consistency matters more than timing</td></tr>
+          <tr><td>Vitamin D3</td><td>Common gap even in sunny climates, more so with an indoor gym routine</td><td>1000–2000 IU/day</td></tr>
+          <tr><td>Omega-3 / fish oil</td><td>Covers the gap if fatty fish isn't a regular feature</td><td>1–2g combined EPA/DHA per day</td></tr>
+          <tr><td>Electrolyte sachet</td><td>Useful on training days given the daily sweat loss from strength + cardio combined</td><td>1 sachet on harder training days</td></tr>
+          <tr><td>Basic multivitamin</td><td>Cheap insurance against the fruit/veg gap while you're adjusting the diet</td><td>1/day with a meal</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="cut-steps">
+    <div class="sec-head">
+      <h2>Daily steps</h2>
+      <p>Non-exercise movement (NEAT) matters as much as the gym sessions for a recomp — it's free calorie burn that doesn't compete with recovery from lifting.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat-tile"><span class="num-big">8,000–10,000</span><span class="lbl">step target, every day including rest day</span></div>
+      <div class="stat-tile"><span class="num-big">+2,000–3,000</span><span class="lbl">extra vs. gym-day steps from lifting/cardio alone</span></div>
+    </div>
+    <p style="color:var(--ink-soft); font-size:.85rem;">Easiest way to hit it without dedicating extra time: a short walk after dinner (also aids digestion after the protein-heavy meal), taking calls standing/walking where possible, and treating Saturday's rest day as a walking day rather than a fully sedentary one — movement without added training stress is exactly what recovery days benefit from.</p>
+  </section>
+
+  <section id="cut-exercise">
+    <div class="sec-head">
+      <h2>Gym split</h2>
+      <p>Strength + cardio every day, Saturday off — as you outlined. With 6 days of combined sessions, the strength side should rotate body parts so you're not re-hitting the same muscles with no recovery; cardio stays short since it's stacked onto lifting every day.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="week-table">
+        <thead><tr><th>Day</th><th>Strength focus</th><th>Cardio (after lifting)</th></tr></thead>
+        <tbody>
+          <tr><td>Mon</td><td>Upper body — push (chest/shoulders/triceps)</td><td>15–20min easy incline walk or bike</td></tr>
+          <tr><td>Tue</td><td>Lower body — squat pattern (quads/glutes)</td><td>15–20min easy pace</td></tr>
+          <tr><td>Wed</td><td>Upper body — pull (back/biceps)</td><td>15–20min easy pace</td></tr>
+          <tr><td>Thu</td><td>Lower body — hinge pattern (hamstrings/glutes/lower back)</td><td>15–20min easy pace</td></tr>
+          <tr><td>Fri</td><td>Full body / weak-point accessories</td><td>20–25min, can push slightly harder here</td></tr>
+          <tr><td>Sat</td><td>Rest</td><td>Rest — this is where the muscle actually builds</td></tr>
+          <tr><td>Sun</td><td>Light full body or repeat a weak day</td><td>15–20min easy pace</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="info-block">
+      <h4>Why rotate body parts daily</h4>
+      <p>Training every day works for recomp only if you're not hitting the same muscle group with no recovery window — that's why Mon/Wed are push/pull instead of both being "upper body," and Tue/Thu split squat vs. hinge patterns. Each muscle group still gets roughly 48 hours before it's loaded again.</p>
+    </div>
+    <div class="info-block">
+      <h4>Strength session shape</h4>
+      <p>Each day: 4–5 exercises for that day's focus, 3–4 sets of 6–10 reps. Track your weights/reps every session — recomp lives or dies on whether you're actually progressing the lifts, since that's the stimulus telling your body to build muscle instead of just maintain it. Keep cardio genuinely easy on lifting days (conversational pace) — its job here is extra calorie burn and recovery, not a second hard workout.</p>
+    </div>
+  </section>
+
+  <section id="cut-timeline">
+    <div class="sec-head">
+      <h2>Week-by-week focus</h2>
+      <p>No kg targets here on purpose — recomp is judged by strength trend, measurements and the mirror, not the scale. Take a tape measurement (waist, chest, arms) and a photo every 2 weeks; weigh in 2–3x/week and track the average, not single readings.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="week-table">
+        <thead><tr><th>Week</th><th>Focus</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Find your working weights on each main lift; establish maintenance calories and protein target</td></tr>
+          <tr><td>2</td><td>First small progression on each lift (+1 rep or a small weight jump); dial in meal timing around sessions</td></tr>
+          <tr><td>3</td><td>First measurement + photo check-in — compare to week 1, not to the goal</td></tr>
+          <tr><td>4</td><td>Halfway point — if the scale's climbed more than ~1kg with no strength gains, trim 150–200 kcal; if lifts have stalled, add 150–200 kcal</td></tr>
+          <tr><td>5</td><td>Second measurement + photo check-in; protein and sleep matter more than anything else at this point</td></tr>
+          <tr><td>6</td><td>Keep pushing the same lifts for small progressions — this is where visible change usually starts showing up</td></tr>
+          <tr><td>7</td><td>Third measurement + photo check-in; start thinking about which clothes you're packing for Thailand</td></tr>
+          <tr><td>8–9</td><td>Final check-in — judge the whole 8-9 weeks by strength gained and how you look/feel, not a single number</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Directional plan, not medical advice — individual results depend on starting weight, body composition and training history. If anything feels off (persistent fatigue, joint pain, declining performance), back off rather than pushing through.
+  </footer>
+
+  </div>
+
 </div>
 
 <script>
+(function(){
+  try{
+    var navButtons = document.querySelectorAll('.page-nav button');
+    var pages = document.querySelectorAll('.page');
+    navButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        navButtons.forEach(function(b){ b.classList.remove('active'); });
+        pages.forEach(function(p){ p.classList.remove('active'); });
+        btn.classList.add('active');
+        var target = document.getElementById(btn.getAttribute('data-page'));
+        if(target) target.classList.add('active');
+        window.scrollTo(0,0);
+      });
+    });
+  }catch(e){}
+})();
 (function(){
   try{
     var buttons = document.querySelectorAll('.split-tabs button');
