@@ -159,6 +159,23 @@
 
   .page{display:none;}
   .page.active{display:block;}
+  .page-nav{
+    position:sticky; top:0; z-index:20; display:flex; gap:8px; padding-block:12px;
+    background:var(--paper); border-bottom:1px solid var(--line); margin-bottom:8px;
+  }
+  .page-nav button{
+    font-family:"Work Sans", sans-serif; font-size:.9rem; font-weight:700;
+    background:transparent; border:1px solid var(--line); color:var(--ink-soft);
+    padding:9px 18px; border-radius:999px; cursor:pointer;
+  }
+  .page-nav button.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+
+  .cmp-table{width:100%; border-collapse:collapse; font-size:.86rem;}
+  .cmp-table th, .cmp-table td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top;}
+  .cmp-table th{font-family:"IBM Plex Mono",monospace; font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); font-weight:600;}
+  .cmp-table tr.cmp-current td{background:var(--tag-bg);}
+  .cmp-table td b{color:var(--ink);}
+  .stars{color:var(--gold); letter-spacing:1px;}
 
   /* ---- Cut plan specifics ---- */
   .warn-block{
@@ -184,6 +201,11 @@
 </head>
 <body>
 <div class="wrap">
+
+  <nav class="page-nav">
+    <button class="active" data-page="page-trip">Trip Plan</button>
+    <button data-page="page-compare">Compare Destinations</button>
+  </nav>
 
   <div id="page-trip" class="page active">
 
@@ -693,9 +715,182 @@
 
   </div>
 
+  <div id="page-compare" class="page">
+
+  <header class="hero">
+    <h1>Where else could this trip go?</h1>
+    <p class="sub">Same constraints as the Bangkok/Hua Hin plan — flexible budget, tight dates (~6 nights, late Nov 2026), beach resort as the priority, strong kid activities as the priority, and ideally one flight (direct or close to it) from Kathmandu. This is exploratory, not a change to what's booked.</p>
+    <div class="route-strip">
+      <span class="route-chip">From <b>Kathmandu (KTM)</b></span>
+      <span class="route-chip">~6 nights, late Nov 2026</span>
+      <span class="route-chip">Priority: <b>beach + kid activities</b></span>
+      <span class="route-chip">Priority: <b>fewest flight legs</b></span>
+    </div>
+  </header>
+
+  <section id="cmp-overview">
+    <div class="sec-head">
+      <h2>At a glance</h2>
+      <p>Ranked by flight simplicity from Kathmandu first, since that's the hard constraint — everything else is a trade-off from there.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr><th>Destination</th><th>Flight from KTM</th><th>To the beach</th><th>Beach</th><th>Kid activities</th><th>Budget feel</th></tr>
+        </thead>
+        <tbody>
+          <tr class="cmp-current">
+            <td><b>Bangkok + Hua Hin/Cha-Am</b><br><span style="color:var(--ink-soft); font-size:.8rem;">(current plan)</span></td>
+            <td>Direct, Thai Airways 2x/day — ~3h30m</td>
+            <td>~3h road transfer to Hua Hin</td>
+            <td><span class="stars">★★★</span> calm, not dramatic</td>
+            <td><span class="stars">★★★★★</span> Safari World, Sea Life, water park, elephant sanctuary — all proven</td>
+            <td>Mid, well understood</td>
+          </tr>
+          <tr>
+            <td><b>Bangkok + Pattaya</b></td>
+            <td>Direct, Thai Airways — ~3h30m</td>
+            <td>~2–2.5h road transfer, shorter than Hua Hin</td>
+            <td><span class="stars">★★</span> busier, more built-up</td>
+            <td><span class="stars">★★★★★</span> Pattaya has its own water park + aquarium + elephant village, on top of Bangkok's</td>
+            <td>Mid</td>
+          </tr>
+          <tr>
+            <td><b>Phuket</b> (via Bangkok)</td>
+            <td>1 stop via BKK on Thai Airways — ~3h30m + ~1h30m</td>
+            <td>None — airport is on the island</td>
+            <td><span class="stars">★★★★★</span> genuine tropical beach</td>
+            <td><span class="stars">★★★★</span> aquarium, elephant sanctuary, water park nearby</td>
+            <td>Mid-high</td>
+          </tr>
+          <tr>
+            <td><b>Kuala Lumpur + Langkawi</b></td>
+            <td>Direct, several airlines (Himalaya Air, Malaysia Airlines, Batik Air) — ~5h</td>
+            <td>~1h domestic flight from KUL to Langkawi</td>
+            <td><span class="stars">★★★★</span> quiet island beaches</td>
+            <td><span class="stars">★★★</span> KL itself is excellent (Aquaria, zoo); Langkawi is quieter, fewer attractions</td>
+            <td>Mid</td>
+          </tr>
+          <tr>
+            <td><b>Colombo + South Coast (Bentota/Mirissa)</b></td>
+            <td>Direct, SriLankan Airlines, 4x/week — ~3h35m</td>
+            <td>~1.5–3h road/rail transfer south</td>
+            <td><span class="stars">★★★★</span> good, less crowded than Thailand</td>
+            <td><span class="stars">★★★</span> turtle hatcheries, whale watching, Colombo zoo — less built for toddlers specifically</td>
+            <td>Mid, can run cheaper</td>
+          </tr>
+          <tr>
+            <td><b>Dubai</b></td>
+            <td>Direct, flydubai/Himalaya/Nepal Air — several daily — ~4h45m</td>
+            <td>None — resort beaches right in the city</td>
+            <td><span class="stars">★★★</span> man-made, not tropical, but clean and calm</td>
+            <td><span class="stars">★★★★★</span> Aquaventure, Dubai Aquarium, Legoland, Dubai Safari Park — best-in-class, zero transfer</td>
+            <td>Higher</td>
+          </tr>
+          <tr>
+            <td><b>Maldives</b></td>
+            <td>1+ stop, usually via Colombo or Delhi</td>
+            <td>Resort speedboat/seaplane transfer from Male</td>
+            <td><span class="stars">★★★★★</span> the best beach on this list, by far</td>
+            <td><span class="stars">★★</span> resort-contained — no zoo/aquarium/water park variety, some kids' clubs</td>
+            <td>Highest</td>
+          </tr>
+          <tr>
+            <td><b>Goa</b> (via Delhi/Mumbai)</td>
+            <td>1 stop on Indian carriers — ~4-5h total</td>
+            <td>None — Goa airport is in the state</td>
+            <td><span class="stars">★★★</span> decent, touristy in parts</td>
+            <td><span class="stars">★★★</span> water parks, dolphin-watching, short list</td>
+            <td>Lower-mid</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:var(--ink-soft); font-size:.85rem; margin-top:10px;">Flight details from current schedules — always re-check closer to booking since airline routes from Kathmandu (especially Himalaya Airlines) have shifted often over the past two years.</p>
+  </section>
+
+  <section id="cmp-detail">
+    <div class="sec-head">
+      <h2>The real contenders, in detail</h2>
+      <p>Three worth seriously considering against the current plan — the rest either add a connection or lose too much on kid activities or beach quality to be a clear upgrade.</p>
+    </div>
+
+    <div class="info-block">
+      <h4>1. Bangkok + Pattaya — same flight, shorter transfer, livelier beach town</h4>
+      <p>Identical flight to what's booked (Thai Airways direct to BKK), but Pattaya is ~45-60min closer by road than Hua Hin, and has its own dedicated kid infrastructure: Pattaya's Sanctuary of Truth less toddler-relevant, but Nong Nooch's elephant shows, Underwater World Pattaya (aquarium), and Pattaya's own water parks (Ramayana, Cartoon Network Amazone) mean a full week of activity options without ever needing Bangkok's Safari World. Trade-off: Pattaya's beach itself is more built-up/less calm than Hua Hin's, and the town has a livelier, more adult nightlife reputation alongside the family-friendly parts — easy to avoid with hotel choice, but worth knowing.</p>
+      <div class="facts">
+        <span>Sample split: 2N Bangkok (zoo/aquarium day) + 4N Pattaya (beach + water park + elephant village)</span>
+        <span>Same TG flight as booked — zero flight risk introduced</span>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h4>2. Phuket — the "real beach" upgrade, for one extra flight leg</h4>
+      <p>If beach quality specifically is the priority, Phuket is a genuine step up from Hua Hin or Pattaya — proper turquoise-water, resort-lined beaches (Kata, Karon, Bang Tao) with excellent family resort infrastructure. The cost is a second flight: Thai Airways KTM→BKK→Phuket, effectively the same outbound red-eye pattern plus a ~1h30m domestic hop, so same early-morning logistics as the current plan but with one more leg and one more set of security/boarding with a toddler. Once there: Phuket Aquarium, Phuket Elephant Sanctuary (ethical, no-riding), and Splash Jungle Water Park are all well-regarded and an easy Grab/taxi from the main beach areas.</p>
+      <div class="facts">
+        <span>Sample split: land BKK, connect same day to Phuket, 5-6N Phuket, fly home via BKK</span>
+        <span>One extra flight leg each way vs. current plan</span>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <h4>3. Dubai — zero transfer, best-in-class kid attractions, man-made beach</h4>
+      <p>The strongest "one flight, zero road transfer" option on this list, and arguably the deepest bench of toddler-specific attractions anywhere nearby: Aquaventure Waterpark (dedicated toddler area), Dubai Aquarium & Underwater Zoo, Legoland, and Dubai Safari Park are all 20-30min apart by taxi, with resort beaches (JBR, Jumeirah) requiring no separate transfer at all — you land, you're there. The honest trade-off is the beach itself: calm and clean, but a city beach, not a tropical getaway — more "resort with a beach" than "beach is the whole point." Budget also runs higher than the Thailand options.</p>
+      <div class="facts">
+        <span>Sample split: 6N based at one JBR/Jumeirah beach resort, day-trips to each attraction</span>
+        <span>No domestic transfer needed at all — simplest logistics of any option here</span>
+      </div>
+    </div>
+
+    <div class="info-block" style="border-left:4px solid var(--gold);">
+      <h4>Honorable mention, with a catch: Maldives</h4>
+      <p>If beach quality alone decided this, Maldives wins outright — nothing else on this list is close. But it fails the other two priorities: no direct flight from Kathmandu (routing via Colombo or Delhi adds real time with a toddler), and most resorts are genuinely resort-contained — no zoo, aquarium, or water park to break up a 6-day stay, just the reef and the pool. Worth it if "do absolutely nothing but the beach and resort pool" is actually the goal; a weaker fit for "kid activities" as a stated priority.</p>
+    </div>
+  </section>
+
+  <section id="cmp-sample">
+    <div class="sec-head">
+      <h2>Sample day-by-day: Bangkok + Pattaya</h2>
+      <p>The closest alternative to what's booked — same flight, same overall shape, different second half.</p>
+    </div>
+    <div class="bar"><span class="hh" style="flex:2">Bangkok</span><span class="bkk" style="flex:4">Pattaya</span></div>
+    <div class="daylist">
+      <div class="day-row hh"><div class="d">Mon<b>23</b></div><div><div class="loc">Bangkok</div><p>TG 310 lands BKK 05:10 (overnight flight). Transfer to a Bangkok hotel near Siam/Pathumwan (~45min), rest and recover.</p></div></div>
+      <div class="day-row hh"><div class="d">Tue<b>24</b></div><div><div class="loc">Bangkok</div><p>Safari World or Sea Life Bangkok — the one Bangkok animal day.</p></div></div>
+      <div class="day-row bkk"><div class="d">Wed<b>25</b></div><div><div class="loc">Pattaya</div><p>Morning transfer to Pattaya (~2-2.5h), check in, first beach/pool afternoon.</p></div></div>
+      <div class="day-row bkk"><div class="d">Thu<b>26</b></div><div><div class="loc">Pattaya</div><p>Underwater World Pattaya (aquarium) or Nong Nooch elephant/garden show.</p></div></div>
+      <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Pattaya</div><p>Water park day (Ramayana or Cartoon Network Amazone) — go early to beat heat and crowds.</p></div></div>
+      <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Pattaya</div><p>Unhurried beach/pool day, pack for the flight home.</p></div></div>
+      <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Pattaya</div><p>Transfer to BKK airport (~2-2.5h, build in buffer), fly home.</p></div></div>
+    </div>
+    <p style="color:var(--ink-soft); font-size:.85rem; margin-top:10px;">This uses the exact same outbound/return flights already assumed for the booked plan — the only change is Pattaya instead of Hua Hin/Cha-Am for the beach half, which shortens the road transfer and adds Pattaya's own water park/aquarium/elephant options on top of Bangkok's.</p>
+  </section>
+
+  <footer>
+    Exploratory comparison, not a booking or a recommendation to change course — the Trip Plan tab is still the one to act on.
+  </footer>
+
+  </div>
+
 </div>
 
 <script>
+(function(){
+  try{
+    var navButtons = document.querySelectorAll('.page-nav button');
+    var pages = document.querySelectorAll('.page');
+    navButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        navButtons.forEach(function(b){ b.classList.remove('active'); });
+        pages.forEach(function(p){ p.classList.remove('active'); });
+        btn.classList.add('active');
+        var target = document.getElementById(btn.getAttribute('data-page'));
+        if(target) target.classList.add('active');
+        window.scrollTo(0,0);
+      });
+    });
+  }catch(e){}
+})();
 (function(){
   try{
     var buttons = document.querySelectorAll('.split-tabs button');
