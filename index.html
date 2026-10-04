@@ -8,70 +8,70 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
   :root{
-    --ink:#16302c; --ink-soft:#54655f; --paper:#ffffff; --paper-raise:#ffffff;
-    --line:#e4e4e0; --teal:#1f6f65; --teal-deep:#134a44; --coral:#d96a4a; --gold:#b8862f;
-    --good:#3d7a4d; --tag-bg:#f0f1ec;
-    --shadow: 0 1px 2px rgba(22,48,44,.05), 0 8px 20px -14px rgba(22,48,44,.15);
-    --radius: 14px;
+    --ink:#201c17; --ink-soft:#6e6456; --paper:#faf7f2; --paper-raise:#faf7f2;
+    --line:#ded4c2; --rule:#201c17; --accent:#a8401c; --accent-soft:#c97a53;
+    --slate:#39586b; --gold:#9c7a28; --good:#3d7a51; --tag-bg:transparent;
+    --shadow: none; --radius: 3px;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --ink:#eef2ef; --ink-soft:#aebdb7; --paper:#12201d; --paper-raise:#182b27;
-      --line:#2b423c; --teal:#5fb3a4; --teal-deep:#8fd1c2; --coral:#e88a6c; --gold:#d9ac57;
-      --good:#6fbf7f; --tag-bg:#213531;
-      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 28px -14px rgba(0,0,0,.55);
+      --ink:#f1ece2; --ink-soft:#ab9f8c; --paper:#17140f; --paper-raise:#17140f;
+      --line:#3a3324; --rule:#f1ece2; --accent:#e8824f; --accent-soft:#c4653a;
+      --slate:#8fb4c9; --gold:#d2ac5a; --good:#79c08f;
     }
   }
   *{box-sizing:border-box;}
   html,body{margin:0;}
   body{
     background:var(--paper); color:var(--ink);
-    font-family:"Work Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.55;
-    padding-inline:20px; padding-block:28px 64px;
+    font-family:"Work Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.6; font-size:16px;
+    padding-inline:24px; padding-block:0 96px;
   }
-  .wrap{max-width:920px; margin:0 auto;}
+  .wrap{max-width:760px; margin:0 auto;}
   img{max-width:100%;}
-  h1,h2,h3{font-family:"Fraunces", Georgia, serif; text-wrap:balance; color:var(--ink); margin:0;}
-  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-deep); font-weight:600;}
-  a{color:var(--teal-deep);}
+  h1,h2,h3{font-family:"Fraunces", Georgia, serif; text-wrap:balance; color:var(--ink); margin:0; font-weight:500; line-height:1.1;}
+  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  a{color:var(--ink); text-decoration-color:var(--line); text-underline-offset:3px;}
+  a:hover{text-decoration-color:var(--accent);}
   .num{font-variant-numeric:tabular-nums;}
 
-  header.hero{padding-block:8px 32px; border-bottom:1px solid var(--line); margin-bottom:36px;}
-  header.hero h1{font-size:clamp(2rem, 5vw, 2.9rem); font-weight:600; margin-top:8px;}
-  header.hero p.sub{color:var(--ink-soft); font-size:1.05rem; max-width:60ch; margin-top:12px;}
-  .route-strip{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
-  .route-chip{background:var(--paper-raise); border:1px solid var(--line); border-radius:999px; padding:6px 14px; font-size:.85rem; color:var(--ink-soft); box-shadow:var(--shadow); font-family:"IBM Plex Mono", monospace;}
+  header.hero{padding-block:48px 40px; margin-bottom:8px;}
+  header.hero h1{font-size:clamp(1.9rem, 5vw, 2.6rem); margin-top:10px; letter-spacing:-.01em;}
+  header.hero p.sub{color:var(--ink-soft); font-size:1.05rem; max-width:56ch; margin-top:14px; line-height:1.65;}
+  .route-strip{display:flex; flex-wrap:wrap; column-gap:22px; row-gap:8px; margin-top:24px; padding-top:20px; border-top:1px solid var(--line); font-family:"IBM Plex Mono", monospace; font-size:.78rem; color:var(--ink-soft);}
+  .route-chip{background:none; border:none; padding:0; font-size:inherit; color:inherit; font-family:inherit;}
   .route-chip b{color:var(--ink); font-family:"Work Sans", sans-serif; font-weight:600;}
 
-  .hero-photos{display:grid; grid-template-columns:1.3fr 1fr; gap:10px; margin-top:22px;}
-  .hero-photos figure{margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); position:relative;}
-  .hero-photos img{width:100%; height:230px; object-fit:cover; display:block;}
-  figcaption{position:absolute; left:0; right:0; bottom:0; padding:6px 10px; font-size:.68rem; font-family:"IBM Plex Mono",monospace; color:#fff; background:linear-gradient(to top, rgba(10,20,18,.75), transparent);}
+  .hero-photos{display:grid; grid-template-columns:1.6fr 1fr; gap:4px; margin-top:28px;}
+  .hero-photos figure{margin:0; overflow:hidden; position:relative;}
+  .hero-photos img{width:100%; height:260px; object-fit:cover; display:block; filter:saturate(.96);}
+  figcaption{position:absolute; left:0; right:0; bottom:0; padding:7px 10px; font-size:.66rem; font-family:"IBM Plex Mono",monospace; color:#fff; background:linear-gradient(to top, rgba(10,10,8,.72), transparent);}
   figcaption a{color:#fff; text-decoration:underline;}
-  @media (max-width:620px){.hero-photos{grid-template-columns:1fr;} .hero-photos img{height:190px;}}
+  @media (max-width:620px){.hero-photos{grid-template-columns:1fr;} .hero-photos img{height:200px;}}
 
-  section{margin-block:44px;}
-  section > .sec-head{margin-bottom:18px;}
-  section > .sec-head h2{font-size:1.5rem; font-weight:600;}
-  section > .sec-head p{color:var(--ink-soft); margin-top:6px; max-width:64ch;}
+  section{margin-block:56px;}
+  section > .sec-head{margin-bottom:22px; max-width:64ch;}
+  section > .sec-head h2{font-size:1.4rem;}
+  section > .sec-head p{color:var(--ink-soft); margin-top:7px;}
 
-  .recommend{background:linear-gradient(155deg, var(--tag-bg), transparent 65%), var(--paper-raise); border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:var(--radius); padding:20px 22px; box-shadow:var(--shadow); display:flex; gap:16px; align-items:flex-start;}
-  .recommend .eyebrow{color:var(--teal);}
-  .recommend h3{font-size:1.2rem; margin:4px 0 6px; font-weight:600;}
+  .recommend{border-top:2px solid var(--ink); padding-top:18px;}
+  .recommend .eyebrow{color:var(--accent);}
+  .recommend h3{font-size:1.25rem; margin:5px 0 8px;}
   .recommend p{margin:0; color:var(--ink-soft);}
-  .recommend .why{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
-  .recommend .why span{font-family:"IBM Plex Mono", monospace; font-size:.72rem; background:var(--tag-bg); color:var(--ink-soft); padding:4px 10px; border-radius:999px;}
-  .rec-icon{width:34px; height:34px; flex:0 0 auto;}
+  .recommend .why{display:flex; flex-wrap:wrap; column-gap:16px; row-gap:6px; margin-top:14px;}
+  .recommend .why span{font-family:"IBM Plex Mono", monospace; font-size:.72rem; color:var(--ink-soft);}
+  .recommend .why span::before{content:"— "; color:var(--line);}
+  .rec-icon{display:none;}
 
-  .opt-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px;}
-  .opt-card{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:12px;}
-  .opt-card.picked{border-color:var(--teal); box-shadow:0 0 0 2px var(--teal), var(--shadow);}
-  .opt-card.picked .airline b::after{content:"Recommended"; margin-left:8px; font-family:"IBM Plex Mono",monospace; font-size:.62rem; background:var(--teal); color:#fff; padding:2px 8px; border-radius:999px; vertical-align:middle; letter-spacing:.04em;}
+  .opt-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .opt-card{background:var(--paper); padding:20px 22px; display:flex; flex-direction:column; gap:13px;}
+  .opt-card.picked{box-shadow:inset 2px 0 0 var(--accent);}
+  .opt-card.picked .airline b::after{content:"Recommended"; margin-left:9px; font-family:"IBM Plex Mono",monospace; font-size:.6rem; color:var(--accent); letter-spacing:.04em; vertical-align:middle; font-weight:600;}
   .opt-card .airline{display:flex; align-items:center; justify-content:space-between; gap:8px;}
-  .opt-card .airline b{font-size:1.02rem;}
-  .badge{font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:999px; font-weight:600;}
-  .badge.mon{background:#e4eee3; color:var(--good);}
-  .badge.flex{background:var(--tag-bg); color:var(--ink-soft);}
+  .opt-card .airline b{font-size:1.02rem; font-weight:600;}
+  .badge{font-family:"IBM Plex Mono", monospace; font-size:.66rem; letter-spacing:.05em; text-transform:uppercase; font-weight:600;}
+  .badge.mon{color:var(--good);}
+  .badge.flex{color:var(--ink-soft);}
   .leg{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; font-family:"IBM Plex Mono", monospace; font-size:.85rem;}
   .leg .place{display:flex; flex-direction:column;}
   .leg .place .time{font-size:1.15rem; font-weight:600; color:var(--ink);}
@@ -80,122 +80,122 @@
   .leg .mid .line{width:100%; height:1px; background:var(--line); position:relative; min-width:40px;}
   .leg .mid .line::after{content:"→"; position:absolute; right:-2px; top:-9px; color:var(--ink-soft); font-size:.75rem;}
   .leg.rtl .place:last-child{align-items:flex-end; text-align:right;}
-  .opt-foot{display:flex; justify-content:space-between; align-items:baseline; border-top:1px dashed var(--line); padding-top:10px; font-size:.85rem; color:var(--ink-soft); flex-wrap:wrap; gap:6px;}
+  .opt-foot{display:flex; justify-content:space-between; align-items:baseline; border-top:1px solid var(--line); padding-top:11px; font-size:.85rem; color:var(--ink-soft); flex-wrap:wrap; gap:6px;}
   .price{font-family:"IBM Plex Mono", monospace; font-weight:600; color:var(--ink); font-size:.95rem;}
   .meta-line{font-size:.78rem;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;}
 
-  .split-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;}
-  .split-tabs button{font-family:"Work Sans", sans-serif; font-size:.85rem; font-weight:600; background:var(--paper-raise); border:1px solid var(--line); color:var(--ink-soft); padding:8px 14px; border-radius:999px; cursor:pointer;}
-  .split-tabs button:hover{border-color:var(--teal);}
-  .split-tabs button.active{background:var(--teal-deep); color:#f4f2ec; border-color:var(--teal-deep);}
+  .split-tabs{display:flex; gap:22px; flex-wrap:wrap; margin-bottom:20px; border-bottom:1px solid var(--line);}
+  .split-tabs button{font-family:"Work Sans", sans-serif; font-size:.88rem; font-weight:600; background:none; border:none; border-bottom:2px solid transparent; color:var(--ink-soft); padding:0 0 10px; cursor:pointer;}
+  .split-tabs button:hover{color:var(--ink);}
+  .split-tabs button.active{color:var(--ink); border-color:var(--accent);}
   .split-panel{display:none;}
   .split-panel.active{display:block;}
-  .bar{display:flex; height:34px; border-radius:8px; overflow:hidden; border:1px solid var(--line); margin-bottom:14px;}
-  .bar span{display:flex; align-items:center; justify-content:center; font-family:"IBM Plex Mono",monospace; font-size:.72rem; font-weight:600; color:#f4f2ec;}
-  .bar .bkk{background:var(--teal);}
-  .bar .hh{background:var(--coral);}
-  .daylist{display:grid; gap:10px;}
-  .day-row{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:12px 14px; background:var(--paper-raise); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow);}
-  .day-row .d{font-family:"IBM Plex Mono",monospace; color:var(--ink-soft); font-size:.78rem; padding-top:2px;}
+  .bar{display:flex; height:30px; overflow:hidden; margin-bottom:16px; gap:2px;}
+  .bar span{display:flex; align-items:center; justify-content:center; font-family:"IBM Plex Mono",monospace; font-size:.7rem; font-weight:600; color:#fff;}
+  .bar .bkk{background:var(--slate);}
+  .bar .hh{background:var(--accent);}
+  .daylist{display:flex; flex-direction:column;}
+  .day-row{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:13px 0; border-top:1px solid var(--line);}
+  .day-row:first-child{border-top:none;}
+  .day-row .d{font-family:"IBM Plex Mono",monospace; color:var(--ink-soft); font-size:.76rem; padding-top:2px;}
   .day-row .d b{display:block; color:var(--ink); font-size:.95rem; font-family:"Work Sans",sans-serif; font-weight:700;}
-  .day-row .loc{font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:3px;}
-  .day-row.bkk .loc{color:var(--teal);}
-  .day-row.hh .loc{color:var(--coral);}
+  .day-row .loc{font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; font-weight:700; margin-bottom:3px;}
+  .day-row.bkk .loc{color:var(--slate);}
+  .day-row.hh .loc{color:var(--accent);}
   .day-row p{margin:0; color:var(--ink-soft); font-size:.92rem;}
 
-  .city-block{margin-bottom:28px;}
-  .city-block h3{font-size:1.15rem; margin-bottom:4px;}
-  .city-block .city-note{color:var(--ink-soft); font-size:.88rem; margin-bottom:14px; max-width:62ch;}
-  .city-photo{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); position:relative; margin-bottom:16px;}
-  .city-photo img{width:100%; height:220px; object-fit:cover; display:block;}
-  .hotel-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:14px;}
-  .hotel-card{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px;}
-  .hotel-card.picked{border-color:var(--teal); box-shadow:0 0 0 2px var(--teal), var(--shadow);}
-  .hotel-card.picked h4::after{content:"Pick"; margin-left:8px; font-family:"IBM Plex Mono",monospace; font-size:.6rem; font-weight:600; background:var(--teal); color:#fff; padding:2px 7px; border-radius:999px; letter-spacing:.04em; vertical-align:middle;}
+  .city-block{margin-bottom:34px;}
+  .city-block h3{font-size:1.2rem; margin-bottom:5px;}
+  .city-block .city-note{color:var(--ink-soft); font-size:.88rem; margin-bottom:16px; max-width:60ch;}
+  .city-photo{overflow:hidden; position:relative; margin-bottom:18px;}
+  .city-photo img{width:100%; height:220px; object-fit:cover; display:block; filter:saturate(.96);}
+  .hotel-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .hotel-card{background:var(--paper); padding:18px 20px; display:flex; flex-direction:column; gap:9px;}
+  .hotel-card.picked{box-shadow:inset 2px 0 0 var(--accent);}
+  .hotel-card.picked h4::after{content:"Pick"; margin-left:9px; font-family:"IBM Plex Mono",monospace; font-size:.6rem; font-weight:600; color:var(--accent); letter-spacing:.05em; vertical-align:middle;}
   .hotel-card h4{margin:0; font-family:"Work Sans",sans-serif; font-size:1rem; font-weight:700;}
-  .hotel-card .tags{display:flex; flex-wrap:wrap; gap:6px;}
-  .tag{font-size:.68rem; font-family:"IBM Plex Mono",monospace; letter-spacing:.03em; padding:2px 8px; border-radius:6px; background:var(--tag-bg); color:var(--ink-soft);}
-  .tag.price{background:var(--teal-deep); color:#fff; font-weight:600;}
+  .hotel-card .tags{display:flex; flex-wrap:wrap; gap:6px 14px;}
+  .tag{font-size:.68rem; font-family:"IBM Plex Mono",monospace; letter-spacing:.03em; color:var(--ink-soft); padding:0;}
+  .tag.price{color:var(--accent); font-weight:600;}
 
-  .info-block{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); margin-bottom:14px;}
-  .info-block h4{margin:0 0 6px; font-family:"Work Sans",sans-serif; font-size:1rem; font-weight:700;}
+  .info-block{padding:18px 0; border-top:1px solid var(--line); margin-bottom:0;}
+  .info-block h4,.info-block>strong{display:block; margin:0 0 6px; font-family:"Work Sans",sans-serif; font-size:1rem; font-weight:700;}
   .info-block p{margin:0; color:var(--ink-soft); font-size:.9rem;}
-  .info-block .facts{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
-  .info-block .facts span{font-family:"IBM Plex Mono",monospace; font-size:.72rem; background:var(--tag-bg); color:var(--ink-soft); padding:4px 10px; border-radius:999px;}
-  .info-block.note{border-left:4px solid var(--gold);}
+  .info-block .facts{display:flex; flex-wrap:wrap; column-gap:18px; row-gap:6px; margin-top:12px;}
+  .info-block .facts span{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--ink-soft);}
+  .info-block.note{box-shadow:inset 2px 0 0 var(--gold); padding-left:16px;}
 
-  .app-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px;}
-  .app-card{background:var(--paper-raise); border:1px solid var(--line); border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow); display:flex; gap:12px; align-items:flex-start;}
-  .app-card .app-icon{width:36px; height:36px; border-radius:9px; flex:0 0 auto; display:flex; align-items:center; justify-content:center; font-size:1.1rem; background:var(--tag-bg);}
+  .app-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:18px 28px;}
+  .app-card{display:flex; gap:12px; align-items:flex-start; padding-top:16px; border-top:1px solid var(--line);}
+  .app-card .app-icon{width:30px; height:30px; flex:0 0 auto; display:flex; align-items:center; justify-content:center; font-size:1.1rem;}
   .app-card h4{margin:0 0 3px; font-size:.92rem; font-family:"Work Sans",sans-serif; font-weight:700;}
   .app-card p{margin:0; font-size:.82rem; color:var(--ink-soft);}
 
   .timeline{display:flex; flex-direction:column; gap:0;}
-  .tl-item{display:grid; grid-template-columns:120px 1fr; gap:16px; padding-block:14px; border-top:1px solid var(--line);}
+  .tl-item{display:grid; grid-template-columns:120px 1fr; gap:16px; padding-block:16px; border-top:1px solid var(--line);}
   .tl-item:first-child{border-top:none;}
-  .tl-item .tl-when{font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--teal-deep); font-weight:600; padding-top:2px;}
-  .tl-item h4{margin:0 0 6px; font-size:.95rem; font-family:"Work Sans",sans-serif; font-weight:700;}
-  .tl-item ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
-  .tl-item li{font-size:.88rem; color:var(--ink-soft); display:flex; gap:8px; align-items:flex-start;}
-  .tl-item li::before{content:""; flex:0 0 auto; width:14px; height:14px; margin-top:3px; border-radius:4px; border:1.5px solid var(--line); background:var(--paper-raise);}
+  .tl-item .tl-when{font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--accent); font-weight:600; padding-top:2px;}
+  .tl-item h4{margin:0 0 7px; font-size:.95rem; font-family:"Work Sans",sans-serif; font-weight:700;}
+  .tl-item ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px;}
+  .tl-item li{font-size:.88rem; color:var(--ink-soft); display:flex; gap:9px; align-items:flex-start;}
+  .tl-item li::before{content:"–"; flex:0 0 auto; color:var(--line); font-weight:700;}
   @media (max-width:520px){.tl-item{grid-template-columns:1fr;} .tl-item .tl-when{padding-top:0;}}
   .hotel-card p{margin:0; font-size:.87rem; color:var(--ink-soft);}
 
-  .gallery{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:16px;}
-  .gallery figure{margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line); background:var(--paper-raise);}
-  .gallery img{width:100%; height:160px; object-fit:cover; display:block;}
-  .gallery figcaption{position:static; background:none; color:var(--ink-soft); padding:10px 12px; font-family:"Work Sans",sans-serif; font-size:.85rem;}
-  .gallery figcaption a{color:var(--teal-deep); font-family:"IBM Plex Mono",monospace; font-size:.68rem; display:block; margin-top:4px;}
+  .gallery{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:4px;}
+  .gallery figure{margin:0; overflow:hidden;}
+  .gallery img{width:100%; height:160px; object-fit:cover; display:block; filter:saturate(.96);}
+  .gallery figcaption{position:static; background:none; color:var(--ink-soft); padding:10px 2px; font-family:"Work Sans",sans-serif; font-size:.85rem;}
+  .gallery figcaption a{color:var(--ink-soft); font-family:"IBM Plex Mono",monospace; font-size:.68rem; display:block; margin-top:4px;}
 
-  .check-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px;}
-  .check-col h4{font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-deep); margin-bottom:10px; font-weight:600;}
-  .check-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .check-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:28px;}
+  .check-col h4{font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.09em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; font-weight:600; padding-bottom:8px; border-bottom:1px solid var(--line);}
+  .check-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
   .check-col li{display:flex; align-items:flex-start; gap:9px; font-size:.92rem; color:var(--ink-soft);}
-  .check-col li::before{content:""; flex:0 0 auto; width:16px; height:16px; margin-top:2px; border-radius:5px; border:1.5px solid var(--line); background:var(--paper-raise);}
+  .check-col li::before{content:"–"; flex:0 0 auto; color:var(--line); font-weight:700;}
 
-  footer{margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--ink-soft); font-size:.85rem;}
+  footer{margin-top:64px; padding-top:22px; border-top:1px solid var(--line); color:var(--ink-soft); font-size:.85rem;}
   footer .credits{margin-top:10px; font-size:.78rem;}
   footer .credits a{color:var(--ink-soft);}
 
   .page{display:none;}
   .page.active{display:block;}
   .page-nav{
-    position:sticky; top:0; z-index:20; display:flex; gap:8px; padding-block:12px;
-    background:var(--paper); border-bottom:1px solid var(--line); margin-bottom:8px;
+    position:sticky; top:0; z-index:20; display:flex; gap:26px; padding-block:18px;
+    background:var(--paper); border-bottom:1px solid var(--line); margin-bottom:0;
   }
   .page-nav button{
-    font-family:"Work Sans", sans-serif; font-size:.9rem; font-weight:700;
-    background:transparent; border:1px solid var(--line); color:var(--ink-soft);
-    padding:9px 18px; border-radius:999px; cursor:pointer;
+    font-family:"IBM Plex Mono", monospace; font-size:.76rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+    background:none; border:none; color:var(--ink-soft);
+    padding:0; cursor:pointer;
   }
-  .page-nav button.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .page-nav button.active{color:var(--ink); text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:5px; text-decoration-thickness:2px;}
 
   .cmp-table{width:100%; border-collapse:collapse; font-size:.86rem;}
   .cmp-table th, .cmp-table td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top;}
   .cmp-table th{font-family:"IBM Plex Mono",monospace; font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); font-weight:600;}
-  .cmp-table tr.cmp-current td{background:var(--tag-bg);}
+  .cmp-table tr.cmp-current td{box-shadow:inset 2px 0 0 var(--accent);}
   .cmp-table td b{color:var(--ink);}
   .stars{color:var(--gold); letter-spacing:1px;}
 
   /* ---- Cut plan specifics ---- */
   .warn-block{
-    background:var(--paper-raise); border:1px solid var(--line); border-left:4px solid var(--coral);
-    border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow); margin-bottom:20px;
+    border-top:2px solid var(--accent); padding-top:16px; margin-bottom:24px;
   }
   .warn-block h4{margin:0 0 6px; font-size:1rem;}
   .warn-block p{margin:0; color:var(--ink-soft); font-size:.9rem;}
-  .stat-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin:18px 0;}
-  .stat-tile{background:var(--paper-raise); border:1px solid var(--line); border-radius:12px; padding:14px 16px; box-shadow:var(--shadow);}
-  .stat-tile .num-big{font-family:"IBM Plex Mono",monospace; font-size:1.4rem; font-weight:600; color:var(--teal-deep); display:block;}
+  .stat-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin:20px 0;}
+  .stat-tile{background:var(--paper); padding:15px 16px;}
+  .stat-tile .num-big{font-family:"IBM Plex Mono",monospace; font-size:1.4rem; font-weight:600; color:var(--accent); display:block;}
   .stat-tile .lbl{font-size:.76rem; color:var(--ink-soft); margin-top:2px; display:block;}
   .week-table{width:100%; border-collapse:collapse; font-size:.88rem;}
   .week-table th, .week-table td{text-align:left; padding:9px 10px; border-bottom:1px solid var(--line);}
   .week-table th{font-family:"IBM Plex Mono",monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); font-weight:600;}
   .week-table td.num{font-variant-numeric:tabular-nums; font-family:"IBM Plex Mono",monospace;}
-  .table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:24px;}
+  .table-wrap{overflow-x:auto; border:1px solid var(--line); margin-bottom:26px;}
   .table-wrap .week-table{margin:0;}
   .table-wrap th:first-child, .table-wrap td:first-child{padding-left:16px;}
-  .day-split{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:14px; margin-bottom:24px;}
+  .day-split{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-bottom:26px;}
   .day-split .hotel-card h4{font-size:.95rem;}
 </style>
 </head>
@@ -205,6 +205,7 @@
   <nav class="page-nav">
     <button class="active" data-page="page-trip">Trip Plan</button>
     <button data-page="page-compare">Bangkok Buys &amp; Logistics</button>
+    <button data-page="page-business">Salina's Business Dev</button>
   </nav>
 
   <div id="page-trip" class="page active">
@@ -302,10 +303,10 @@
     <div class="daylist">
       <div class="day-row hh"><div class="d">Mon<b>23</b></div><div><div class="loc">Hua Hin</div><p>TG 310 lands BKK 05:10 (overnight flight), transfer direct to Dusit Thani Hua Hin (~3h). Check-in after 3pm — plan a slow morning, ask about early check-in.</p></div></div>
       <div class="day-row hh"><div class="d">Tue<b>24</b></div><div><div class="loc">Hua Hin</div><p>Full beach + pool day.</p></div></div>
-      <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Water park or elephant sanctuary.</p></div></div>
-      <div class="day-row bkk"><div class="d">Thu<b>26</b></div><div><div class="loc">Bangkok</div><p>Checkout Dusit Thani before noon, transfer to Bangkok, check in to Pathumwan Princess after 3pm, easy dinner, MBK right downstairs for anything you need.</p></div></div>
-      <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day — Safari World on weekday hours (9am–5pm, dolphin show 1:45pm).</p></div></div>
-      <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Unhurried day — no checkout pressure. Sea Life Bangkok (walkable from the hotel), pool time, or just MBK/Siam wandering with the toddler.</p></div></div>
+      <div class="day-row hh"><div class="d">Wed<b>25</b></div><div><div class="loc">Hua Hin</div><p>Hutsadin Elephant Foundation — feeding/bathing session, calm pace.</p></div></div>
+      <div class="day-row bkk"><div class="d">Thu<b>26</b></div><div><div class="loc">Bangkok</div><p>Checkout Dusit Thani before noon, transfer to Bangkok, check in to Pathumwan Princess after 3pm, pool time before it gets dark, easy dinner, MBK right downstairs for anything you need.</p></div></div>
+      <div class="day-row bkk"><div class="d">Fri<b>27</b></div><div><div class="loc">Bangkok</div><p>Full zoo/aquarium day — Safari World on weekday hours (9am–5pm, dolphin show 1:45pm). Evening pool wind-down back at the hotel.</p></div></div>
+      <div class="day-row bkk"><div class="d">Sat<b>28</b></div><div><div class="loc">Bangkok</div><p>Unhurried day — no checkout pressure. Sea Life Bangkok (walkable from the hotel), pool time (morning and/or afternoon), or just MBK/Siam wandering with the toddler.</p></div></div>
       <div class="day-row bkk"><div class="d">Sun<b>29</b></div><div><div class="loc">Bangkok</div><p>Checkout before noon, transfer to BKK airport for TG 319, departs 10:15, lands KTM 12:25.</p></div></div>
     </div>
 
@@ -346,7 +347,7 @@
         <div>
           <h4>Hua Hin — water park or elephants</h4>
           <ul>
-            <li><b>Morning</b> — Vana Nava Water Jungle (go right at opening, ~9-10am, to beat heat and crowds) or Hutsadin Elephant Foundation feeding/bathing session.</li>
+            <li><b>Morning</b> — Hutsadin Elephant Foundation feeding/bathing session, calm pace. Vana Nava Water Jungle only as a bonus add-on if there's energy left afterward.</li>
             <li><b>Midday</b> — Lunch near whichever activity, nap back at hotel if needed.</li>
             <li><b>Afternoon</b> — Pool or beach, whichever the toddler has more energy for.</li>
             <li><b>Evening</b> — Pack for the Bangkok transfer, early night.</li>
@@ -361,6 +362,7 @@
             <li><b>Before noon</b> — Checkout Dusit Thani Hua Hin.</li>
             <li><b>~11am–2pm</b> — Transfer to Bangkok (~3h, build in a toddler stop).</li>
             <li><b>After 3pm</b> — Check in to Pathumwan Princess (MBK Center).</li>
+            <li><b>~4:30–5:30pm</b> — Pool time to unwind after the transfer, before it gets dark.</li>
             <li><b>Evening</b> — Easy dinner — food court right downstairs at MBK if the toddler's had enough travel for one day.</li>
           </ul>
         </div>
@@ -374,8 +376,10 @@
             <li><b>8:15am</b> — Grab to Safari World (~45-60min from Pathumwan/Siam, longer in traffic — leave buffer).</li>
             <li><b>9:15am</b> — Arrive, start with the drive-through safari before it gets hot.</li>
             <li><b>11:00am–1:00pm</b> — Marine Park section, shaded rest/lunch break.</li>
+            <li><b>Heads up — nap clash:</b> Shlok's usual nap (noon–2pm Nepal time) lands at ~1:15–3:15pm Thailand time, right over the 1:45pm dolphin show. Either let him nap in the stroller through the show (shaded, low-stim enough to sleep through) or treat the show as optional and prioritize the nap instead.</li>
             <li><b>1:45pm</b> — Dolphin/sea lion show (weekday time — confirm same-week, as schedules shift).</li>
             <li><b>3:00–4:00pm</b> — Head back toward the hotel.</li>
+            <li><b>~4:30–5:30pm</b> — Pool wind-down after a long animal day.</li>
             <li><b>Evening</b> — Dinner, early night.</li>
           </ul>
         </div>
@@ -385,9 +389,9 @@
         <div>
           <h4>Bangkok — the unhurried bonus day</h4>
           <ul>
-            <li><b>Morning</b> — Sleep in; Sea Life Bangkok at Siam Paragon is a short walk/BTS hop from the hotel — good low-key activity with no Grab needed.</li>
+            <li><b>Morning</b> — Pool time while it's quiet, or Sea Life Bangkok at Siam Paragon (short walk/BTS hop from the hotel) — whichever the toddler's more up for.</li>
             <li><b>Midday</b> — Lunch at Siam Paragon or back at MBK, nap at the hotel.</li>
-            <li><b>Afternoon</b> — Pool time at Pathumwan Princess, or more mall wandering if the toddler's still got energy.</li>
+            <li><b>Afternoon</b> — More pool time, or mall wandering if the toddler's still got energy.</li>
             <li><b>Evening</b> — Relaxed dinner, pack for the flight home.</li>
           </ul>
         </div>
@@ -475,23 +479,60 @@
       <p>Good no-cost place to let a toddler run around outdoors on the Thu 26 transfer day or the unhurried Sat 28 — paddle boats and a playground at Lumpini, boardwalks and a lake at Benjakitti.</p>
     </div>
     <p style="color:var(--ink-soft); font-size:.85rem;">The full-on animal day is <b>Friday 27 Nov</b> — Safari World's weekday hours (9–5) and the 1:45pm show apply. Sat 28 is unhurried with no checkout pressure, good for Sea Life Bangkok or just resting before the Sun 29 flight.</p>
+    <div class="info-block" style="margin-top:14px;">
+      <h4>Dinosaurs — open item, worth a look</h4>
+      <p>Dinosaur Planet (Sukhumvit/Emporium area) and Thainosaur (Asiatique The Riverfront) are both animatronic dinosaur attractions in Bangkok, but both are a 30–45min Grab from Pathumwan — further than Safari World/Sea Life. Worth considering only if there's a genuinely free slot (maybe Sat 28), not worth disrupting the food/relax plan to fit in.</p>
+    </div>
 
     <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Hua Hin / Cha-Am</h3>
     <div class="info-block">
-      <h4>Vana Nava Water Jungle</h4>
-      <p>Hua Hin's water park, with a dedicated shallow kids'/toddler zone. Go right at opening to beat the heat and the queues — good fit for the Wed 25 Nov activity day.</p>
+      <h4>Hutsadin Elephant Foundation — the priority</h4>
+      <p>Ethical, no-riding elephant sanctuary — feeding and bathing experience. Calm pace, no crowds, no rides — fits both the "elephants are Shlok's thing" priority and the Hua Hin relax mood. This is the Wed 25 Nov activity, not an alternative to one.</p>
+    </div>
+    <div class="info-block">
+      <h4>Vana Nava Water Jungle — optional, only if there's appetite left</h4>
+      <p>Hua Hin's water park, with a dedicated shallow kids'/toddler zone. Higher-stimulation than the elephant sanctuary — treat as a bonus add-on for the same day if energy allows, not a must-do. Go right at opening to beat the heat and queues if you do go.</p>
       <div class="facts">
         <span>Open daily, typically 10am–6pm</span>
         <span>Shallow toddler pool + slow river on-site</span>
       </div>
     </div>
     <div class="info-block">
-      <h4>Hutsadin Elephant Foundation</h4>
-      <p>Ethical, no-riding elephant sanctuary — feeding and bathing experience. Calmer and shorter than the water park, good alternative for the same day if a toddler responds better to animals than water play.</p>
-    </div>
-    <div class="info-block">
       <h4>The beach itself</h4>
       <p>Cha-Am's beach (right by Dusit Thani) is calmer and less built-up than central Hua Hin's — fewer horse-ride vendors, gentler for a toddler wary of crowds or waves.</p>
+    </div>
+    <div class="info-block">
+      <h4>Helicopter Thailand — Shlok loves helicopters</h4>
+      <p>Helicopter Thailand runs scenic sightseeing flights out of Hua Hin, typically 15–20 min over the coastline — Hua Hin town, Cha-Am, the coast and resort belt from the air. <b>Cost:</b> short private scenic helicopter flights in Thailand generally run from roughly THB 10,000–50,000 depending on duration/operator and whether it's a shared or private charter (comparable Phuket/Bangkok/Pattaya operators price in this band) — get an exact Hua Hin quote directly from Helicopter Thailand before booking, since this wasn't confirmed to an exact number. <b>Before booking, confirm:</b> (1) their under-2 policy — most operators require every passenger in their own seatbelt, no lap-holding, (2) whether they have a child-sized headset that actually fits (ear protection is the real constraint, not the flight itself). Treat as a maybe given the relax/non-stressed priority for Hua Hin, but worth the call given how much Shlok would love it.</p>
+    </div>
+  </section>
+
+  <section id="good-food">
+    <div class="sec-head">
+      <h2>Good food — non-Indian, toddler-friendly</h2>
+      <p>One proper dinner per city, plus the casual local spots already in the plan. Nothing tasting-menu/stuffy — all fine with a toddler at the table.</p>
+    </div>
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:18px 0 10px;">Hua Hin / Cha-Am</h3>
+    <div class="info-block">
+      <h4>Jaras Hua Hin — the one splurge dinner</h4>
+      <p>Michelin-starred, at the InterContinental Hua Hin Resort, a short Grab from Dusit Thani. Modern European/seafood-driven menu, resort setting used to families — ask for an early 6–6:30pm seating to keep it toddler-friendly.</p>
+    </div>
+    <div class="info-block">
+      <h4>Chatchai Market — casual, local vendors</h4>
+      <p>Already in the plan for a relaxed evening (Tue 24) — real local food, not touristy, and a toddler can wander between stalls rather than sit still through a full meal.</p>
+    </div>
+    <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Bangkok</h3>
+    <div class="info-block">
+      <h4>Fireplace Grill And Bar — steak</h4>
+      <p>Proper steakhouse, relaxed grill format rather than fine-dining formality — easy to bring a toddler to. Good fit for Fri 27 or Sat 28 evening.</p>
+    </div>
+    <div class="info-block">
+      <h4>Paste — one Michelin star, royal Thai</h4>
+      <p>Shared-plate format works well with a mixed adult/toddler table. The other strong "good food" option in Bangkok if steak isn't the mood that night.</p>
+    </div>
+    <div class="info-block">
+      <h4>Baan — Bib Gourmand, everyday excellent</h4>
+      <p>Michelin-recognized but affordable and unpretentious — good for the lower-key Sat 28 "no checkout pressure" day.</p>
     </div>
   </section>
 
@@ -519,8 +560,8 @@
     </div>
     <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:18px 0 10px;">SIM / data</h3>
     <div class="info-block">
-      <h4>Buy the eSIM before you leave Kathmandu</h4>
-      <p>Airalo's Thailand eSIM (or Klook's) installs in minutes over your home WiFi and only activates once it detects a Thai network — so there's zero risk of burning data early. Landing at 05:10 after an overnight flight is the worst possible time to be queuing at an airport SIM counter with a cranky toddler; skip that queue entirely.</p>
+      <h4>Airalo Thailand eSIM — 7-day Unlimited, $21 each</h4>
+      <p>Buy one each for you and Salina (7-day Unlimited plan covers the full Nov 23–29 window exactly) — $42 total. Install over Kathmandu WiFi now; it only activates once it detects a Thai network, so there's zero risk of burning data early. Landing at 05:10 after an overnight flight is the worst possible time to be queuing at an airport SIM counter with a cranky toddler — this skips that queue entirely. Note: "Unlimited" is typically fair-use/throttled after a daily high-speed cap, fine for maps/messaging/photos.</p>
     </div>
     <div class="info-block">
       <h4>Keep your Nepali SIM active but on airplane mode + WiFi</h4>
@@ -528,12 +569,10 @@
     </div>
     <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Transfers &amp; getting around</h3>
     <div class="info-block">
-      <h4>Pre-book the BKK → Hua Hin transfer, don't wing it at 05:30am</h4>
-      <p>Grab works fine, but a 3-hour fixed-route trip straight off an overnight flight is exactly the case for a pre-booked private transfer (hotel concierge, Airport Thailand transfer services, or Grab's scheduled-ride feature) — guaranteed car, fixed price, no surge pricing at an odd hour, and a driver already waiting with a sign instead of you hunting for a pickup point half-asleep with luggage and a toddler.</p>
+      <h4>Hua Hin Cab, both legs — BKK → Hua Hin and Hua Hin → MBK</h4>
+      <p>Book both with Hua Hin Cab (4.8★, Toyota Fortuner, THB 2,600 each way) in one go: Suvarnabhumi → Dusit Thani Hua Hin for the Mon 23 pre-dawn landing (name-sign meet-and-greet, give them the TG 310 flight number so they track delays), and Dusit Thani Hua Hin → Pathumwan Princess (MBK) for the Thu 26 checkout — same price, same reliability, nothing to chase last-minute.</p>
     </div>
     <div class="info-block">
-      <h4>Request a car seat or bring a compact one</h4>
-      <p>Grab/taxis in Thailand rarely carry compliant child seats. A lightweight travel seat (Cosco Scenera, Mifold, or similar) packs small and covers both the 3hr Hua Hin transfer and Bangkok Grab rides.</p>
     </div>
     <div class="info-block">
       <h4>Screenshot everything before you lose signal</h4>
@@ -545,10 +584,14 @@
       <p>THB cash is still useful for markets and small vendors, but hotels, Grab, and most restaurants in Bangkok/Hua Hin take cards. Withdraw from an ATM after landing rather than exchanging at the airport counter — airport exchange rates are consistently the worst in the country.</p>
     </div>
     <div class="info-block">
-      <h4>Both Dusit properties are card-guaranteed, pay-at-hotel</h4>
-      <p>Dusit Thani Hua Hin's confirmation explicitly states "no deposit required" — card on file (Visa ending 8211) is a guarantee only, nothing charged until checkout. Pathumwan Princess's wording was less explicit, so an email went to rsvn@pprincess.com (confirmation #58482SH007188) asking them to confirm pay-at-hotel directly — watch for their reply before the trip.</p>
+      <h4>Both Dusit properties confirmed pay-at-hotel</h4>
+      <p>Dusit Thani Hua Hin's confirmation states "no deposit required," and Pathumwan Princess's reservations team confirmed by email that accommodation charges will be settled directly at the hotel on arrival. Card on file (Visa ending 8211) is a guarantee only at both — nothing pre-charged.</p>
     </div>
     <h3 style="font-family:'Fraunces',serif; font-size:1.05rem; margin:22px 0 10px;">Overnight-flight-specific</h3>
+    <div class="info-block">
+      <h4>Use the family priority lane at Suvarnabhumi immigration</h4>
+      <p>Free, no pre-booking — families with young children, pregnant travelers, and anyone with a disability can use it. There are priority lanes at both main immigration zones (near piers C, and near E/F/G) plus a dedicated priority-only area between them. Just tell the staff directing the queue that you're traveling with a toddler; they'll point you to it. Worth using at 05:10 even if the regular line looks short.</p>
+    </div>
     <div class="info-block">
       <h4>Shift the toddler's nap schedule a few days early</h4>
       <p>TG 310 departs KTM at 00:25 — if your child's bedtime is earlier, a couple of days of a slightly later bedtime beforehand softens the overnight-flight shock.</p>
@@ -575,6 +618,7 @@
             <li>✓ Pathumwan Princess booked — 3N, Thu 26 → Sun 29 Nov, confirmation #58482SH007188</li>
             <li>✓ Holiday Inn Express cancelled</li>
             <li>✓ TG 319 booked — 29 Nov, 10:15 BKK→KTM</li>
+            <li>✓ Work leave booked — Mon 23 Nov through Tue 1 Dec (9 days, covers the trip plus the gap until Shlok's actual Dec 1 birthday)</li>
             <li>Confirm Thailand entry requirements for Nepali passports (visa or e-visa lead time varies — check early)</li>
             <li>Buy travel insurance covering the toddler</li>
             <li>Call Dusit Thani Hua Hin ahead about early check-in given the 05:10 overnight-flight arrival</li>
@@ -588,7 +632,6 @@
           <ul>
             <li>Buy and install the Thailand eSIM (activate only once you land)</li>
             <li>Book Klook tickets for Safari World (or Sea Life) for Fri 27 Nov</li>
-            <li>Decide on the travel car seat for the BKK↔Hua Hin transfer and buy/pack it</li>
             <li>Request crib/cot at both hotels by email or via the booking site</li>
           </ul>
         </div>
@@ -598,7 +641,8 @@
         <div>
           <h4>Confirm and pre-book</h4>
           <ul>
-            <li>Pre-book the Grab/private transfer for the Mon 23 pre-dawn landing (~05:30am) so you're not hunting for a ride half-asleep with a toddler</li>
+            <li><b>Action: book Hua Hin Cab, Leg 1 now</b> — via huahincab.com/booking/ (no email, form only). Suvarnabhumi → Dusit Thani Hua Hin, Mon 23 Nov, flight TG 310 landing 05:10. <b>Vehicle: Toyota Fortuner</b> (not Camry — more luggage/car-seat room). 2 adults + 1 toddler, no car seat needed. THB 2,600 (~$77.43) — request pay-on-arrival/pay driver directly, give them the TG 310 flight number so they track delays.</li>
+            <li>Leg 2 (Dusit Thani Hua Hin → Pathumwan Princess/MBK, Thu 26, ~noon pickup) — book later, same form or via hotel concierge once there. Same Fortuner, same THB 2,600.</li>
             <li>Reconfirm both hotel reservations and flight times</li>
             <li>Pack list first pass — passports, meds, sunscreen, diapers, chargers</li>
             <li>Refill/pack any regular medication with a few days' buffer</li>
@@ -610,7 +654,7 @@
         <div>
           <h4>Final checks</h4>
           <ul>
-            <li>Online check-in for TG 310 if available; confirm the pre-booked Hua Hin transfer pickup time for ~05:30am</li>
+            <li>Online check-in for TG 310 if available; confirm both Hua Hin Cab Fortuner pickups (Suvarnabhumi name-sign, and the Thu 26 Dusit Thani → MBK leg)</li>
             <li>Charge all devices, download offline Google Maps for Bangkok + Hua Hin</li>
             <li>Pack the cabin bag: snacks, a change of clothes, diapers, one comfort toy</li>
             <li>Print or screenshot both hotel confirmations and the TG 310/TG 319 e-tickets</li>
@@ -679,7 +723,6 @@
           <li>Bassinet/seat type confirmed with the airline</li>
           <li>Child meal pre-booked if available</li>
           <li>Stroller gate-check policy confirmed</li>
-          <li>Travel car seat decision made for the BKK ↔ Hua Hin leg</li>
         </ul>
       </div>
       <div class="check-col">
@@ -699,6 +742,47 @@
           <li>THB cash on hand for markets and small vendors</li>
           <li>Crib/cot ("baby cot") requested at both hotels in advance</li>
           <li>1–2 hour nap buffers built around both transfer days</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="checklist-huahin">
+    <div class="sec-head">
+      <h2>Shlok's Hua Hin checklist — pack it, don't rely on buying it there</h2>
+      <p>Bangkok/MBK has everything on demand, so nothing to stress about once you're there. Hua Hin is resort-area, not mall-dense — easier to have it in the bag before Thu 26's transfer than hunt for it locally.</p>
+    </div>
+    <div class="check-grid">
+      <div class="check-col">
+        <h4>Feeding, covered already</h4>
+        <ul>
+          <li>Chicco/Dr. Brown's 2-in-1 bottle warmer &amp; sterilizer + plug adapter (from Amazon.com.au)</li>
+          <li>UHT milk or formula stock for 3 nights, in case Dusit Thani's selection is limited</li>
+          <li>A couple of familiar snacks he won't get tired of, since Hua Hin has less variety than Bangkok</li>
+        </ul>
+      </div>
+      <div class="check-col">
+        <h4>Elephant sanctuary day (Wed 25)</h4>
+        <ul>
+          <li>Clothes you don't mind getting dusty/wet — Hutsadin's feeding/bathing session gets hands-on</li>
+          <li>A full change of clothes packed for after, plus wet wipes</li>
+          <li>Closed-toe shoes rather than sandals for the uneven ground</li>
+        </ul>
+      </div>
+      <div class="check-col">
+        <h4>Beach &amp; pool</h4>
+        <ul>
+          <li>Swim diapers (pack enough — don't assume 7-Eleven-level restock ease like Bangkok)</li>
+          <li>UV swim shirt + sun hat already on the general list — doubly important here given more outdoor time</li>
+          <li>A compact shade/pop-up tent if he naps better out of direct sun on the beach</li>
+        </ul>
+      </div>
+      <div class="check-col">
+        <h4>General buffer</h4>
+        <ul>
+          <li>Kids' med kit (already on the main checklist) — more relevant here, since the nearest proper pharmacy/clinic is less immediate than in central Bangkok</li>
+          <li>Diaper stock for all 3 nights plus a spare day's buffer</li>
+          <li>Comfort item/toy that's already proven to settle him, not a new untested one</li>
         </ul>
       </div>
     </div>
@@ -857,8 +941,8 @@
       </div>
       <div class="hotel-card">
         <h4>Travel gear</h4>
-        <div class="tags"><span class="tag">Compact stroller</span><span class="tag">Carrier</span><span class="tag">Travel car seat</span></div>
-        <p>If you don't already have a lightweight travel stroller, carrier, or compact car seat for the Hua Hin transfer (flagged earlier in the Hacks section), Bangkok's baby shops (Mothercare, Babies"R"Us at Central malls) have better selection and price than Kathmandu.</p>
+        <div class="tags"><span class="tag">Compact stroller</span><span class="tag">Carrier</span></div>
+        <p>If you don't already have a lightweight travel stroller or carrier, Bangkok's baby shops (Mothercare, Babies"R"Us at Central malls) have better selection and price than Kathmandu. No car seat needed — Shlok sleeps on your lap for the transfers.</p>
       </div>
     </div>
     <p style="color:var(--ink-soft); font-size:.85rem;">Easiest approach: fold this into the same Sat 28 mall run (Siam Paragon/CentralWorld area) as the supplements-adjacent and electronics shopping, rather than a separate trip.</p>
@@ -888,13 +972,48 @@
     </div>
   </section>
 
-  <section id="salina-business">
+  <section id="transfer-decision">
     <div class="sec-head">
-      <h2>Salina — lingerie partnership scouting (Bangkok)</h2>
-      <p>Side-project exploration: either white-label a Bangkok-made line under her own Nepal brand, or bring in an existing trusted brand as distributor — open to either, decided by what she finds.</p>
+      <h2>Book the Suvarnabhumi → Hua Hin transfer now?</h2>
+      <p>Short answer: yes, worth locking in now rather than waiting. Here's the reasoning.</p>
     </div>
     <div class="info-block">
-      <strong>The shape of the plan, as she's described it so far</strong>
+      <h4>Why now, not later</h4>
+      <p>TG 310 is already booked and confirmed for a 00:25 departure landing 05:10 — nothing about that is going to change, so there's no date risk in booking the transfer today. Pre-dawn pickups (05:15-05:30am) are a thinner pool of available drivers than daytime slots, and prices for that specific window tend to firm up (or surge, on Grab) the closer you get to the date without a booking. Locking it in now means a fixed price and a guaranteed car, not a live search at 5am with a toddler and bags.</p>
+    </div>
+    <div class="info-block">
+      <h4>The three ways to book it, compared</h4>
+      <div class="facts">
+        <span>Dusit Thani's own concierge transfer — simplest, bundled with the hotel, typically ~THB 3,500-4,500 one-way for a sedan/van; email or call the hotel directly using confirmation #26547SH611025</span>
+        <span>Independent private transfer company (e.g. a BKK airport transfer service) — usually ~THB 2,000-3,000 one-way, fixed price, driver waits with a name sign, generally the best value-for-reliability tradeoff</span>
+        <span>Grab scheduled ride — cheapest on paper (~THB 1,500-2,000) but no guarantee of vehicle size, child seat, or driver actually showing up for a fixed long-distance ride booked in advance — treat as backup only, not the primary plan</span>
+      </div>
+    </div>
+    <div class="warn-block">
+      <h4>Recommendation</h4>
+      <p>✓ Done — Hua Hin Cab booked for both legs (Fortuner, THB 2,600 each way). No car seat needed, Shlok sleeps on your lap. Keep Grab installed as a fallback only, not the plan.</p>
+    </div>
+  </section>
+
+  <footer>
+    Practical add-ons to the main plan — the Trip Plan tab is still the one to act on for dates, hotels, and flights.
+  </footer>
+
+  </div>
+
+  <div id="page-business" class="page">
+
+  <header class="hero">
+    <div class="eyebrow">Salina · Business Dev</div>
+    <h1>Lingerie partnership scouting — Bangkok</h1>
+    <p class="sub">Side-project exploration: either white-label a Bangkok-made line under her own Nepal brand, or bring in an existing trusted brand as distributor — open to either, decided by what she finds while there.</p>
+  </header>
+
+  <section id="salina-business">
+    <div class="sec-head">
+      <h2>The shape of the plan, as she's described it so far</h2>
+    </div>
+    <div class="info-block">
       <p>Side project to start, not a full-time pivot. Open to white-label or distributorship — whichever conversation goes better. Budget isn't the constraint. Channel is both online (her own site/Instagram, Daraz) and physical retail in Kathmandu. Positioning is still open — depends on what she sees and prices out in Bangkok. She'll be as hands-on with the brand (sizing, packaging, local marketing) as the deal requires. No supplier leads yet — this trip is the actual starting point. No fixed timeline. She wants hired help running it day-to-day, not a co-founder. Regulatory/cultural angle (import duties, advertising norms, how conservative to keep branding) is unresearched — worth looking into before meetings, not during.</p>
     </div>
     <div class="day-split">
@@ -921,31 +1040,8 @@
     </div>
   </section>
 
-  <section id="transfer-decision">
-    <div class="sec-head">
-      <h2>Book the Suvarnabhumi → Hua Hin transfer now?</h2>
-      <p>Short answer: yes, worth locking in now rather than waiting. Here's the reasoning.</p>
-    </div>
-    <div class="info-block">
-      <h4>Why now, not later</h4>
-      <p>TG 310 is already booked and confirmed for a 00:25 departure landing 05:10 — nothing about that is going to change, so there's no date risk in booking the transfer today. Pre-dawn pickups (05:15-05:30am) are a thinner pool of available drivers than daytime slots, and prices for that specific window tend to firm up (or surge, on Grab) the closer you get to the date without a booking. Locking it in now means a fixed price and a guaranteed car, not a live search at 5am with a toddler and bags.</p>
-    </div>
-    <div class="info-block">
-      <h4>The three ways to book it, compared</h4>
-      <div class="facts">
-        <span>Dusit Thani's own concierge transfer — simplest, bundled with the hotel, typically ~THB 3,500-4,500 one-way for a sedan/van; email or call the hotel directly using confirmation #26547SH611025</span>
-        <span>Independent private transfer company (e.g. a BKK airport transfer service) — usually ~THB 2,000-3,000 one-way, fixed price, driver waits with a name sign, generally the best value-for-reliability tradeoff</span>
-        <span>Grab scheduled ride — cheapest on paper (~THB 1,500-2,000) but no guarantee of vehicle size, child seat, or driver actually showing up for a fixed long-distance ride booked in advance — treat as backup only, not the primary plan</span>
-      </div>
-    </div>
-    <div class="warn-block">
-      <h4>Recommendation</h4>
-      <p>Book an independent private transfer company now (or the Dusit Thani concierge option if the price premium is worth the one-less-thing-to-manage factor) — explicitly request a car seat or confirm the vehicle can fit one you bring, and get a confirmation with a phone number for the pickup. Keep Grab installed as a fallback only, not the plan.</p>
-    </div>
-  </section>
-
   <footer>
-    Practical add-ons to the main plan — the Trip Plan tab is still the one to act on for dates, hotels, and flights.
+    Salina's business thread, kept separate from the family trip logistics. Nothing here affects dates, hotels, or flights.
   </footer>
 
   </div>
